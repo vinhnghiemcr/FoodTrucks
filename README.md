@@ -2,7 +2,7 @@
 
 ## Date: 3/23/2022
 
-### By: Canh Vo, Nghiem Truong,
+### By: Canh Vo, [Nghiem Truong](https://www.linkedin.com/in/nghiem-v-truong/),
 
 ### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello]()
 
@@ -15,6 +15,11 @@
 ---
 
 ### **_Technologies_**
+
+- React
+- Express
+- MongoDB
+- JavaScript, HTML, CSS
 
 ### **_Screenshots_**
 
