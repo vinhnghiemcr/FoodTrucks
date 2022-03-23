@@ -2,9 +2,10 @@
 
 ## Date: 3/23/2022
 
-### By: Canh Vo, Nghiem Truong,
+### By: [Canh Vo](https://www.linkedin.com/in/canh-vo-056122188/), Nghiem Truong,
 
-### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello]()
+
+### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello](https://trello.com/b/WilzloTi/foodtrucks)
 
 ---
 
