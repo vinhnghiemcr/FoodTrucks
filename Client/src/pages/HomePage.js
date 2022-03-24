@@ -1,5 +1,4 @@
 import '../style/App.css'
-import reportWebVitals from './reportWebVitals'
 
 const HomePage = () => {
   return (
