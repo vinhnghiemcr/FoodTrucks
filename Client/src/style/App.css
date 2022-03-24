@@ -46,8 +46,18 @@
   flex-direction: column;
   height: 10vh;
   width: 10vh;
+  position: fixed;
+  left: 80%;
+  top: 50%;
 }
 
 .mapContainer {
-  margin-top: 20px;
+  min-height: 100%;
+  min-width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('../assets/ThemePark.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
