@@ -47,30 +47,10 @@ const getReceiptById = async (req, res) => {
   }
 }
 
-const getFoodItems = async (req, res) => {
-  try {
-    const item = await Item.find()
-    return res.status(201).send(item)
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const getMenu = async (req, res) => {
-  try {
-    const menu = await Menu.find()
-    return res.status(201).send(menu)
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
 module.exports = {
   getFoodTrucks,
   getFoodTruckById,
   createReceipt,
   getReceipts,
-  getReceiptById,
-  getFoodItems,
-  getMenu
+  getReceiptById
 }
