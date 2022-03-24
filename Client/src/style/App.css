@@ -37,13 +37,13 @@
   }
 }
 
-.mapContainer {
-  display: grid;
-  grid-template-columns: repeat(50, 1fr);
-  grid-template-rows: repeat(50, 1fr);
-  background-image: url('Client/assets/ThemePark.jpeg');
-  height: 80vh;
-  width: 80vh;
-  justify-content: center;
-  border: 0 20vmax;
+.homeContainer {
+  background-color: rgba(173, 255, 47, 0.4);
+}
+
+.foodTruckIcon {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  width: 10vh;
 }
