@@ -7,7 +7,7 @@ const FoodTruckSchema = require('./FoodTruck')
 
 const Item = mongoose.model('items', ItemSchema)
 const Menu = mongoose.model('menus', MenuSchema)
-const Review = mongoose.model('menus', ReviewSchema)
+const Review = mongoose.model('reviews', ReviewSchema)
 const Receipt = mongoose.model('receipts', ReceiptSchema)
 const FoodTruck = mongoose.model('foodTrucks', FoodTruckSchema)
 
