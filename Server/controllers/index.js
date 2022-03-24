@@ -1,4 +1,6 @@
-const getFoodTrucks = (req, res) => {
+const { FoodTruck, Receipt, Item, Menu } = require('../models/index')
+
+const getFoodTrucks = async (req, res) => {
   try {
     const truck = await FoodTruck.find()
     return res.status(201).send(truck)
@@ -7,7 +9,7 @@ const getFoodTrucks = (req, res) => {
   }
 }
 
-const getFoodTruckById = (req, res) => {
+const getFoodTruckById = async (req, res) => {
   try {
     const truck = await FoodTruck.findById(req.params.id)
     return res.status(201).send(truck)
@@ -16,7 +18,7 @@ const getFoodTruckById = (req, res) => {
   }
 }
 
-const createReceipt = (req, res) => {
+const createReceipt = async (req, res) => {
   try {
     console.log(req.body)
     const receipt = await new Receipt(req.body)
@@ -27,7 +29,7 @@ const createReceipt = (req, res) => {
   }
 }
 
-const getReceipts = (req, res) => {
+const getReceipts = async (req, res) => {
   try {
     const receipt = await Receipt.find()
     return res.status(201).send(receipt)
@@ -36,7 +38,7 @@ const getReceipts = (req, res) => {
   }
 }
 
-const getReceiptById = (req, res) => {
+const getReceiptById = async (req, res) => {
   try {
     const receipt = await Receipt.findById(req.params.id)
     return res.status(201).send(receipt)
