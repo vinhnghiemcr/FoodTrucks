@@ -1,55 +1,55 @@
-<<<<<<< HEAD
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import Menu from "./Menu"
 
 const Truck = () => {
-<<<<<<< HEAD
 
-    return (
-      
-    )
-=======
->>>>>>> 19e7f98f79df72cbac398ac5db457e79ca368a2d
+  const [truckDetail, setTruck] = useState()
+  const [menuDetail, setMenu] = useState()
+
+  useEffect(() => {
+    let isSelected = false
+    const getTruck = async () => {
+      const response = await axios.get(
+        '/food-trucks/:id'
+      )
+    }
+
+    const getMenu = async () => {
+      const response = await axios.get(
+        '/food-trucks/:id/menu/item'
+      )
+    }
+
+    if (!isSelected) {
+      setMenu(response.food-trucks)
+      setTruck(response.food-trucks)
+    }
+
+    getTruck()
+    getMenu()
+    return () => {
+      isSelected = true
+    }
+  })
+
+
+return (
+
+  <div className ="truckComponent">
+    <div className="truckDetails">
+      <h1>{truckDetails.name}</h1>
+    </div>
+    <section className="menuDetals">
+      <h2>MENU</h2>
+      <h3>{menuDetails.item}</h3>
+      <h4>{menuDetails.item.description}</h4>
+      <h4>{menuDetails.item.image}</h4>
+      <h4>{menuDetails.item.price}</h4>
+    </section>
+
+  </div>
+)
 }
 
 export default Truck
-=======
-// import { Link } from 'react-router-dom'
-// import Menu from "./Menu"
-// import Review from './Review'
-// import CheckOut from './CheckOut'
-// import {}
-
-// const Truck = () => {
-
-//   const [items, setItems] = useState([])
-
-//   useEffect(() => {
-//     let isSelected = false
-//     const getTruck = async () => {
-//       const response = await axios.get(
-//         '/food-trucks/:id'
-//       )
-//       if (!isSelected) {
-//         setItems(response.food-trucks)
-//       }
-//     }
-//     const getMenu = async () => {
-//       const response = await axios.get(
-//         '/food-trucks/:id'
-//       )
-//       if (!isSelected) {
-//         setItems(response.food-trucks)
-//       }
-//     }
-//     getItems()
-//     return () => {
-//       isSelected = true
-//     }
-//   })
-
-//   return (
-
-//   )
-// }
-
-// export default Truck
->>>>>>> a290984e516ecfbd254aa58203339a3172b2e8d1
