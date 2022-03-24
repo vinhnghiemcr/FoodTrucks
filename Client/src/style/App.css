@@ -48,10 +48,10 @@
   width: 10vh;
   position: fixed;
   left: 80%;
-  top: 50%;
+  top: 51%;
 }
 
-.mapContainer {
+.truckContainer {
   min-height: 100%;
   min-width: 100%;
   position: fixed;
