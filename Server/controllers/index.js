@@ -16,7 +16,18 @@ const getFoodTruckById = (req, res) => {
   }
 }
 
+const saveReceipt = (req, res) => {
+  try {
+    const receipt = await new Receipt()
+    await receipt.save()
+    return res.status(201).json({ receipt })
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getFoodTrucks,
-  getFoodTruckById
+  getFoodTruckById,
+  saveReceipt
 }
