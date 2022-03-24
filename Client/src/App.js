@@ -4,6 +4,7 @@ import Nav from './components/Nav'
 import About from './pages/AboutPage'
 // import TruckPage from './pages/TruckPage'
 import HomePage from './pages/HomePage'
+import React from 'react'
 
 const App = () => {
   return (
