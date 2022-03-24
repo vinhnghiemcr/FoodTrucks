@@ -18,6 +18,7 @@ const getFoodTruckById = (req, res) => {
 
 const createReceipt = (req, res) => {
   try {
+    console.log(req.body)
     const receipt = await new Receipt(req.body)
     await receipt.save()
     return res.status(201).json({ receipt })
