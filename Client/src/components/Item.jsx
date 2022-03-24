@@ -1,4 +1,4 @@
-const item = (props) => {
+const Item = (props) => {
   return (
     <div>
       <div className="itemName" onClick={props.onClick}>
@@ -9,4 +9,4 @@ const item = (props) => {
   )
 }
 
-export default item
+export default Item

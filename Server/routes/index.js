@@ -12,4 +12,8 @@ router.get('/receipt/:ftid', controllers.getReceipts)
 
 router.get('/receipts/:rId', controllers.getReceiptById)
 
+router.get('/items', controllers.getFoodItems)
+
+router.get('/menu', controllers.getMenu)
+
 module.exports = router
