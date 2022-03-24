@@ -5,11 +5,20 @@ import CheckOut from './CheckOut'
 import {}
 
 const Truck = () => {
+
   const [items, setItems] = useState([])
 
   useEffect(() => {
     let isSelected = false
-    const getItems = async () => {
+    const getTruck = async () => {
+      const response = await axios.get(
+        '/food-trucks/:id'
+      )
+      if (!isSelected) {
+        setItems(response.food-trucks)
+      }
+    }
+    const getMenu = async () => {
       const response = await axios.get(
         '/food-trucks/:id'
       )
