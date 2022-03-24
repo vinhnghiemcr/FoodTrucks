@@ -20,7 +20,7 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 
 #### **_The Home Page:_** The Home renders a `map` of the entire theme park, which pinpoints the location of each food truck within the park.
 
-#### **_The Truck page:_** Once a foodtruck is clicked on the `map` displayed on the `HomePage`, the app automatically loads the `TruckPage`, which renders the `Truck` component and the `Review` for the foodtruck. The `Truck` page renders the `Menu` for that foodtruck, and each menu `Item` that shows the price per item, a cart and a checkout counter.
+**_The Truck page:_** Once a foodtruck is clicked on the `map` displayed on the `HomePage`, the app automatically loads the `TruckPage`, which renders the `Truck` component and the `Review` for the foodtruck. The `Truck` page renders the `Menu` for that foodtruck, and each menu `Item` that shows the price per item, a cart and a checkout counter.
 
 #### When an `Item` on the `Menu` is selected, the cart is updated with the number of items selected. The user can then select "CheckOut" from the bottom of the page
 
@@ -29,6 +29,11 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 ---
 
 ## **_Technologies_**
+
+- HTML, CSS, JavaScript
+- React
+- Express
+- MongoDB
 
 ## **_Screenshots_**
 
