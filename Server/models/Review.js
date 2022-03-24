@@ -4,8 +4,9 @@ const Review = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
-    price: { type: String, required: true },
-    brand: { type: Schema.Types.ObjectId, ref: 'brands' }
+    rating: { type: Number, required: true},
+    date: { type: Date, required: true },
+    truck: { type: Schema.Types.ObjectId, ref: 'Truck', required: true }
   },
   { timestamps: true }
 )
