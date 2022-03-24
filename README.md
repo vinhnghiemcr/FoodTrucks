@@ -4,7 +4,6 @@
 
 ### By: [Canh Vo](https://www.linkedin.com/in/canh-vo-056122188/), [Nghiem Truong](https://www.linkedin.com/in/nghiem-v-truong/), [Molly Obermeier](https://www.linkedin.com/in/marie-obermeier-6b6b03158/), [Chinwendu Ukoha](https://www.linkedin.com/in/chinwenduukoha)
 
-
 ### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello](https://trello.com/b/WilzloTi/foodtrucks)
 
 ---
@@ -44,8 +43,12 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 ---
 
 ## **_Technologies_**
+- React
+- Express
+- MongoDB
+- JavaScript, HTML, CSS
 
-## **_Screenshots_**
+### **_Screenshots_**
 
 ## **_Future Updates_**
 
