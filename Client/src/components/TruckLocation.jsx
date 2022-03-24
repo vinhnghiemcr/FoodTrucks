@@ -1,3 +1,4 @@
+import React from 'react'
 import Truck from '../assets/foodtruckIcon.png'
 
 const TruckLocation = () => {
