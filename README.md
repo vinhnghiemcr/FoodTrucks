@@ -2,9 +2,9 @@
 
 ## Date: 3/23/2022
 
-### By: Canh Vo, [Nghiem Truong](https://www.linkedin.com/in/nghiem-v-truong/),
+### By: [Canh Vo](https://www.linkedin.com/in/canh-vo-056122188/), Nghiem Truong,
 
-### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello]()
+### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello](https://trello.com/b/WilzloTi/foodtrucks)
 
 ---
 
@@ -24,6 +24,14 @@
 ### **_Screenshots_**
 
 ### **_Future Updates_**
+
+#### After completing this project we would like to add many more capabilities, including the functionalities below:
+
+- Update and add trucks across the map
+- Develop buying capabilities
+- Create an owner login to update, add, or delete their own trucks
+- Allow users to leave comments about specific food items
+- Develop the map further
 
 ### **_Credits_**
 
