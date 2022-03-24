@@ -16,7 +16,7 @@ const getFoodTruckById = (req, res) => {
   }
 }
 
-const saveReceipt = (req, res) => {
+const createReceipt = (req, res) => {
   try {
     const receipt = await new Receipt()
     await receipt.save()
@@ -26,8 +26,28 @@ const saveReceipt = (req, res) => {
   }
 }
 
+const getReceipts = (req, res) => {
+  try {
+    const receipt = await Receipt.find()
+    return res.status(201).send(receipt)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const getReceiptById = (req, res) => {
+  try {
+    const receipt = await Receipt.findById()
+    return res.status(201).send(receipt)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getFoodTrucks,
   getFoodTruckById,
-  saveReceipt
+  createReceipt,
+  getReceipts,
+  getReceiptById
 }
