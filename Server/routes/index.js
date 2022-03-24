@@ -6,7 +6,7 @@ router.get('/food-trucks', controllers.getFoodTrucks)
 
 router.get('/food-trucks/:id', controllers.getFoodTruckById)
 
-router.post('/receipt/:ftid', controllers.saveReceipt)
+router.post('/receipt/:ftid', controllers.createReceipt)
 
 router.get('/receipt/:ftid', controllers.getReceipts)
 
