@@ -2,9 +2,10 @@
 
 ## Date: 3/23/2022
 
-### By: Canh Vo, Nghiem Truong, Molly Obermeier, [Chinwendu Ukoha](https://www.linkedin.com/in/chinwenduukoha)
+### By: [Canh Vo](https://www.linkedin.com/in/canh-vo-056122188/), [Nghiem Truong](https://www.linkedin.com/in/nghiem-v-truong/), [Molly Obermeier](https://www.linkedin.com/in/marie-obermeier-6b6b03158/), [Chinwendu Ukoha](https://www.linkedin.com/in/chinwenduukoha)
 
-### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello]()
+
+### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello](https://trello.com/b/WilzloTi/foodtrucks)
 
 ---
 
@@ -48,6 +49,15 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 
 ## **_Future Updates_**
 
+#### After completing this project we would like to add many more capabilities, including the functionalities below:
+
+- Update and add trucks across the map
+- Develop buying capabilities
+- Create an owner login to update, add, or delete their own trucks
+- Allow users to leave comments about specific food items
+- Develop the map further
+
 ## **_Credits_**
+
 
 Images: [Google](https://www.google.com/)
