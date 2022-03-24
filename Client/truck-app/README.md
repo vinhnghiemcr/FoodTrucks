@@ -2,7 +2,7 @@
 
 ## Date: 3/23/2022
 
-### By: [Canh Vo](https://www.linkedin.com/in/canh-vo-056122188/), [Nghiem Truong](https://www.linkedin.com/in/nghiem-v-truong/), [Molly Obermeier](https://www.linkedin.com/in/marie-obermeier-6b6b03158/), [Chinwendu Ukoha](https://www.linkedin.com/in/chinwenduukoha)
+### By: [Molly Obermeier](https://www.linkedin.com/in/marie-obermeier-6b6b03158/), [Nghiem Truong](https://www.linkedin.com/in/nghiem-v-truong/), [Chinwendu Ukoha](https://www.linkedin.com/in/chinwenduukoha), [Canh Vo](https://www.linkedin.com/in/canh-vo-056122188/)
 
 ### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello](https://trello.com/b/WilzloTi/foodtrucks)
 
