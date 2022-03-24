@@ -5,8 +5,8 @@ import TruckLocation from './TruckLocation'
 const Map = () => {
 
   return (
-    <div className="mapContainer">
-      <TruckLocation />
+    <div className="truckContainer">
+        <TruckLocation />
     </div>
 
   )

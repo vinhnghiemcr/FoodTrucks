@@ -1,8 +1,10 @@
 import Truck from '../assets/foodtruckIcon.png'
 
-const TruckLocation = () => {
+const TruckLocation = (props) => {
   return (
-    <img src={Truck} className="foodTruckIcon"/>
+    <button className='truckButton'> 
+      <img src={Truck} className="foodTruckIcon"/>
+    </button>
   )
 }
 export default TruckLocation
