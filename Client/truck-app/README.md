@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# FoodTrucks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Date: 3/23/2022
 
-## Available Scripts
+### By: [Canh Vo](https://www.linkedin.com/in/canh-vo-056122188/), [Nghiem Truong](https://www.linkedin.com/in/nghiem-v-truong/), [Molly Obermeier](https://www.linkedin.com/in/marie-obermeier-6b6b03158/), [Chinwendu Ukoha](https://www.linkedin.com/in/chinwenduukoha)
 
-In the project directory, you can run:
+### [Github](https://github.com/vinhnghiemcr/FoodTrucks) [Trello](https://trello.com/b/WilzloTi/foodtrucks)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## **_General Overview_**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A full stack web app that maps out all the foodtrucks available at a theme park, their location, menu and how to purchase each menu item from each food truck.
 
-### `npm test`
+### **_App Outlook_**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### The page opens up with a full home page that displays a nav bar, which contains the `AboutPage`, `HomePage` and `TruckPage`.
 
-### `npm run build`
+#### **_The About Page:_** This page gives a detailed description of our app and all of its components.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### **_The Home Page:_** The Home renders a `map` of the entire theme park, which pinpoints the location of each food truck within the park.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**_The Truck page:_** Once a foodtruck is clicked on the `map` displayed on the `HomePage`, the app automatically loads the `TruckPage`, which renders the `Truck` component and the `Review` for the foodtruck. The `Truck` page renders the `Menu` for that foodtruck, and each menu `Item` that shows the price per item, a cart and a checkout counter.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### When an `Item` on the `Menu` is selected, the cart is updated with the number of items selected. The user can then select "CheckOut" from the bottom of the page
 
-### `npm run eject`
+#### We would be adding a conditional rendering to open the `Receipt` page if the user clicks on the "CheckOut" button. The `Receipt` page would then render a `postReview` page that allows the customers post an optional review on that foodtruck.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## **_Technologies_**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- HTML, CSS, JavaScript
+- React
+- Express
+- MongoDB
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## **_Screenshots_**
 
-## Learn More
+## **_Future Updates_**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### After completing this project we would like to add many more capabilities, including the functionalities below:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Update and add trucks across the map
+- Develop buying capabilities
+- Create an owner login to update, add, or delete their own trucks
+- Allow users to leave comments about specific food items
+- Develop the map further
 
-### Code Splitting
+## **_Credits_**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Images: [Google](https://www.google.com/)
