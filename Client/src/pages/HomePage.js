@@ -1,16 +1,9 @@
 import '../style/App.css'
+import Map from '../components/Map'
+import { useState } from 'react'
 
 const HomePage = () => {
-  return (
-    <div className="map">
-      <header className="mapHeader">
-        <img src="" className="mapImage" alt="mainHomepage" />
-        <div className="homeContainer">
-          <div className="mapContainer"></div>
-        </div>
-      </header>
-    </div>
-  )
+  return <Map />
 }
 
 export default HomePage
