@@ -1,5 +1,5 @@
 const db = require('../db')
-const { Item, Menu, Review, Receipt, FoodTruck } = require('../models')
+const { Item, Menu, FoodTruck } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
@@ -8,70 +8,45 @@ const main = async () => {
       name: 'Apple',
       price: 3
     })
-    item1.save()
+    await item1.save()
+
+    const item2 = await new Item({
+        name: 'Banana',
+        price: 3
+      })
+      item2.save()
+
+      const item3 = await new Item({
+        name: 'Water',
+        price: 5
+      })
+    await item3.save()
 
     const menu1 = await new Menu({
         name: 'First Menu',
-        ites: [item1._id],
+        items: [item1._id, item2._id, item3._id]
     })
-    menu1.save()
+    await menu1.save()
 
-    const review1 = await new Menu({
-        name: 'First Menu',
-        ites: [item1._id],
+    const foodTruck1 = await new FoodTruck({
+        name: 'Express Kitchen',
+        menu: menu1._id,
+        location: 'Northwest of the park',
+        image: 'https://media1.sacurrent.com/sacurrent/imager/u/original/25026533/ron_bechtol.jpg',
+        rating: 5,
+        openHours: '10am-6pm'
     })
-    menu1.save()
+    await foodTruck1.save()
 
-  
-    
-  
-    const products = [
-      {
-        title: 'Apple AirPods',
-        description: 'https://www.apple.com/airpods',
-        price: '250',
-        brand: brand1._id
-      },
-      {
-        title: 'Apple iPhone Pro',
-        description: 'https://www.apple.com/iphone-11-pro',
-        price: '1000',
-        brand: brand1._id
-      },
-      {
-        title: 'Apple Watch',
-        description: 'https://www.apple.com/watch',
-        price: '499',
-        brand: brand1._id
-      },
-      {
-        title: 'Vespa Primavera',
-        description: 'https://www.vespa.com/us_EN/vespa-models/primavera.html',
-        price: '3000',
-        brand: brand2._id
-      },
-      {
-        title: 'New Balance 574 Core',
-        description: 'https://www.newbalance.com/pd/574-core/ML574-EG.html',
-        price: '84',
-        brand: brand3._id
-      },
-      {
-        title: 'Tribe Messenger Bike 004',
-        description:
-          'https://tribebicycles.com/collections/messenger-series/products/mess-004-tx',
-        price: '675',
-        brand: brand4._id
-      },
-      {
-        title: 'Stumptown Hair Bender Coffee',
-        description: 'https://www.stumptowncoffee.com/products/hair-bender',
-        price: '17',
-        brand: brand5._id
-      }
-    ]
-  
-    await Product.insertMany(products)
+    // const review1 = await new Review({
+    //     name: 'Nghiem Truong',
+    //     description: 'I love food truck',
+    //     rating: 5,
+    //     date: new Date(),
+
+    // })
+
+    // await Product.insertMany(products)
     console.log('Created products!')
   }
   
