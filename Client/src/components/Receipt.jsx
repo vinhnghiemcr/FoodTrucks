@@ -1,3 +1,4 @@
+
 import Item from "./Item"
 
 const Receipt = (props) => {
@@ -15,3 +16,7 @@ const Receipt = (props) => {
     </div>
   )
 }
+
+
+export default Receipt
+
