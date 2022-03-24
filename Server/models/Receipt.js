@@ -6,7 +6,7 @@ const Product = new Schema(
     totalCost: { type: Number, required: true },
     date: { type: Date, required: true },
     paid: { type: Boolean, required: true},
-    truck: { type: Schema.Types.ObjectId, ref: 'Truck', required: true }
+    truck: { type: Schema.Types.ObjectId, ref: 'FoodTruck', required: true }
   },
   { timestamps: true }
 )
