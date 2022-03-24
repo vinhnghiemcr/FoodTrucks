@@ -29,12 +29,8 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 ---
 
 ## **_Technologies_**
-- React
-- Express
-- MongoDB
-- JavaScript, HTML, CSS
 
-### **_Screenshots_**
+## **_Screenshots_**
 
 ## **_Future Updates_**
 
