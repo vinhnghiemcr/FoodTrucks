@@ -51,7 +51,8 @@ const Review = ({ truckId }) => {
         <input type="text" placeholder='Name' value={name} onChange={saveName} />
         {/* <input type="number" min="0" max="5" placeholder="Rate us out of 5" value={rating} onChange={saveRating}></input> */}
         <ReactStars  count={5}  value={rating}  onChange={saveRating} size={24} color2={'#ffd700'} />
-        <input type="text" placeholder='Leave us a comment' value={comment} onChange={saveComment}/>
+        {/* <input type="text" placeholder='Leave us a comment' value={comment} onChange={saveComment}/> */}
+        <textarea name="Text1" type="text" cols="40" placeholder='Leave us a comment' rows="5" value={comment} onChange={saveComment}></textarea>
         <button>Submit</button>
       </form>
     </div>

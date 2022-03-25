@@ -9,7 +9,7 @@ const TruckLocation = ({ trucks }) => {
     <div>
       {trucks.map((truck) => (
         <Link to={`/food-trucks/${truck._id}`} key={truck._id}>
-          <img src={Truck} className="foodTruckIcon"/>
+          <img src={Truck} alt="truck icon" className="foodTruckIcon"/>
         </Link>
       ))}
     </div>
