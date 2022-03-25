@@ -1,54 +1,76 @@
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 import Menu from "./Menu"
+import Cart from './Cart'
+import Receipt from './Receipt'
 
 const Truck = () => {
 
   const [truckDetail, setTruck] = useState()
   const [menuDetail, setMenu] = useState()
+  const [receipt, setReceipt] = useState()
+
+  let isSelected = false
+
+  const BASE_URL = 'http://localhost:3001/api'
 
   useEffect(() => {
-    let isSelected = false
-    const getTruck = async () => {
-      const response = await axios.get(
-        '/food-trucks/:id'
-      )
-    }
-
-    const getMenu = async () => {
-      const response = await axios.get(
-        '/food-trucks/:id/menu/item'
-      )
-    }
-
     if (!isSelected) {
-      setMenu(response.food-trucks)
-      setTruck(response.food-trucks)
-    }
+      const getTruck = async () => {
+        const response = await axios.get(
+          '/food-trucks/:id'
+        )
+        if (!isSelected) {
+          setTruck(response)
+        }
+      }
+      getTruck()
+      const getMenu = async () => {
+        const response = await axios.get(
+          '/food-trucks/:id/menu/item'
+        )
+        if (isSelected) {
+          setMenu(response)
+        }
+      }
+      getMenu()
+      const getCart = () => {
 
-    getTruck()
-    getMenu()
-    return () => {
-      isSelected = true
+      }
+    } else if (isSelected) {
+      const getReceipt = async () => {
+        const response = await axios.get(`${BASE_URL}/receipts/:rID`)
+        setReceipt(response)
+      }
+      getReceipt()
     }
-  })
+  }, [isSelected])
 
+  const checkout = async () => {
+    const response = await axios.post(`${BASE_URL}/receipt/:ftid`)
+    isSelected = true
+  }
+
+  let page = isSelected ? (
+    <Receipt details={receipt}/>
+  ) : (
+    <div className ="truckComponent">
+      <div className="truckDetails">
+        <h1>{truckDetail.name}</h1>
+        <img src={truckDetail.img} alt='foodtruck' />
+      </div>
+      <section className="menuDetals">
+        <Menu menu={menuDetail}/>
+      </section>
+      <section className='cart'>
+        <Cart onClick={checkout}/>
+      </section>
+    </div>
+  )
 
 return (
-
-  <div className ="truckComponent">
-    <div className="truckDetails">
-      <h1>{truckDetails.name}</h1>
-    </div>
-    <section className="menuDetals">
-      <h2>MENU</h2>
-      <h3>{menuDetails.item}</h3>
-      <h4>{menuDetails.item.description}</h4>
-      <h4>{menuDetails.item.image}</h4>
-      <h4>{menuDetails.item.price}</h4>
-    </section>
-
-  </div>
+  {page}
 )
 }
 
