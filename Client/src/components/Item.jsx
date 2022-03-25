@@ -1,19 +1,17 @@
 import React from 'react'
 
-const Item = ({ menuItem, onClick }) => {
+const Item = ({ menuItem, onClickAdd, onClickMinus }) => {
 
-  // const handleClick = (item, price) => {
-  //   onclick(item, price)
-  // }
+  
   return (
     <div>
-      <div className="itemName" onClick={(e) => onClick(e, menuItem._id)}>
+      <div className="itemName" >
         <h3>{menuItem.name}</h3>
         {/* <h5>{menuItem.description}</h5>
         <h5>{menuItem.image}</h5> */}
         <h5>{menuItem.price}</h5>
-        <button >+</button>
-        <button >-</button>
+        <button onClick={(e) => onClickAdd(e, menuItem._id)}>+</button>
+        <button onClick={(e) => onClickMinus(e, menuItem._id)}>-</button>
       </div>
     </div>
   )

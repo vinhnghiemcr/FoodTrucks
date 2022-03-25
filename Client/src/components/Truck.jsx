@@ -45,9 +45,23 @@ const Truck = () => {
     }
   }, [isSelected, ftid])
 
-  const getCart = (e, id) => {  
+  const addToCart = (e, id) => {  
+    console.log(truck.rating, "RATIIIINNGGGGGGGGGGGGG")
         setCart((currentCart) =>{ return [...currentCart, id]})
   }
+
+  const removeFromCart = (e, id) => {  
+    setCart((currentCart) =>{      
+      let items = currentCart
+        for (let i = 0; i < items.length; i++) {
+          if (items[i] === id) {
+            items.splice(i,1)
+            break
+          }       
+        }
+        return [...items]
+      })
+}
 
   const checkout = async () => {
     // const response = await axios.post(`${BASE_URL}/receipt/:ftid`)
@@ -67,7 +81,8 @@ const Truck = () => {
 
       <section className="menuDetails">
         <h2>Menu</h2>
-        {menuItems.map((menuItem) => (<Item menuItem={menuItem} className='item' key={menuItem._id} onClick={getCart}/>))}
+        {menuItems.map((menuItem) => 
+        (<Item menuItem={menuItem} className='item' key={menuItem._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
 
       </section>
       <section className='cart'>
