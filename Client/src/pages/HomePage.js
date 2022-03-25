@@ -1,5 +1,5 @@
 import '../style/App.css'
-import Map from '../components/Map'
+import MapTruck from '../components/MapTruck'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import React from 'react'
@@ -20,7 +20,11 @@ const HomePage = () => {
 
   return (
     <div>
+<<<<<<< HEAD
+      <MapTruck trucks={trucks} />
+=======
       <Map trucks={trucks} />
+>>>>>>> b5bc1dda60bb462f72274ebe412881cd830a2b7c
     </div>
   )
 }
