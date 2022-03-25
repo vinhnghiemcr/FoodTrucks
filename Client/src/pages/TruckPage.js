@@ -1,3 +1,8 @@
+
+import Truck from '../components/Truck'
+import React from 'react'
+
+
 const data = {
   name: 'Wendylicious Nigerian Cuisine Food',
   menu: {
@@ -329,3 +334,14 @@ const data = {
     }
   ]
 }
+
+const TruckPage = () => {
+  return (
+    <div>
+      <Truck />
+    </div>
+  )
+}
+
+export default TruckPage
+

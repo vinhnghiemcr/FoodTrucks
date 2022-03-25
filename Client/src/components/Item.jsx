@@ -1,5 +1,6 @@
+import React from 'react'
 
-const item = (props) => {
+const Item = (props) => {
   return (
     <div>
       <div className="itemName" onClick={props.onClick}>

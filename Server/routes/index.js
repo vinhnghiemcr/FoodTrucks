@@ -14,3 +14,7 @@ router.get('/receipts/:rId', controllers.getReceiptById)
 
 module.exports = router
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> a4524309221f12d6abb6168d5818e85b32dad296
