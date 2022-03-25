@@ -46,13 +46,13 @@ const Truck = ({BASE_URL,truck, cart, setCart, isSelected, setIsSelected, receip
         
         <img src={truck.image} alt='foodtruck' />
       </div>
-
-      <section className="menuDetails">
+      <div className='menu'>
+      
         <h2>Menu</h2>
         {menu.items.map((itemId) => 
         (<Item BASE_URL={BASE_URL} itemId={itemId} className='item' key={menu._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
-
-      </section>
+          
+      </div>
       <section className='cart'>
         <Cart onClick={checkout} cart={cart}/>
       </section>
