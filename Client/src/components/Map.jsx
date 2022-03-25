@@ -5,11 +5,11 @@ import ThemePark from '../assets/ThemePark.jpeg'
 import React from 'react'
 
 
-const Map = () => {
+const Map = ({ trucks }) => {
 
   return (
     <div className="truckContainer">
-        <TruckLocation />
+        <TruckLocation trucks={trucks}/>
     </div>
 
   )
