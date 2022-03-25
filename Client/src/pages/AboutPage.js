@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <div>
+    <div className="aboutPage">
       <h1>Food Trucks </h1>
       <h3>
         Looking for something good to eat? Head to the map and checkout a food
