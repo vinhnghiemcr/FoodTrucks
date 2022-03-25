@@ -41,13 +41,13 @@ const Truck = ({truck, cart, setCart, isSelected, setIsSelected, receipt,  menuI
         
         <img src={truck.image} alt='foodtruck' />
       </div>
-
-      <section className="menuDetails">
+      <div className='menu'>
         <h2>Menu</h2>
-        {menuItems.map((menuItem) => 
-        (<Item menuItem={menuItem} className='item' key={menuItem._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
-
-      </section>
+        <section className="menuDetails">
+          {menuItems.map((menuItem) => 
+          (<Item menuItem={menuItem} className='item' key={menuItem._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
+        </section>
+      </div>
       <section className='cart'>
         <Cart onClick={checkout} cart={cart}/>
       </section>
