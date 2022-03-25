@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import React from 'react'
 
 const HomePage = () => {
-  const [trucks, setTruck] = useState()
+  const [trucks, setTruck] = useState([])
 
   const BASE_URL = 'http://localhost:3001/api'
 
@@ -20,7 +20,7 @@ const HomePage = () => {
 
   return (
     <div>
-      <Map />
+      <Map trucks={trucks} />
     </div>
   )
 }
