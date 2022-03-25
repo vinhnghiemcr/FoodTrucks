@@ -33,7 +33,7 @@ const main = async () => {
     menu: menu1._id,
     location: 'Northwest of the park',
     image:
-      'https://media.istockphoto.com/vectors/taco-food-truck-isolated-on-white-background-fast-food-truck-in-vector-id1220349971?k=20&m=1220349971&s=612x612&w=0&h=V0kDplZCgy73oAeEBAuY917OwxzLivQC8ofr2eW3Jb8=',
+      'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2Fd31vot4Yoy9r8dwY%2Fgiphy.gif&f=1&nofb=1',
     rating: 5,
     openHours: '10am-6pm'
   })
