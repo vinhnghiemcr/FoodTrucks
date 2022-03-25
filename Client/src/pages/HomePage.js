@@ -6,7 +6,7 @@ import React from 'react'
 
 const HomePage = () => {
   const [trucks, setTruck] = useState([])
-
+  
   const BASE_URL = 'http://localhost:3001/api'
 
   useEffect(() => {
