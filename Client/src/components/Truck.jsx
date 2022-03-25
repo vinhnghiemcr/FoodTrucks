@@ -63,8 +63,8 @@ const Truck = () => {
         <h1>{truck.name}</h1> 
         <img src={truck.image} alt='foodtruck' />
       </div>
-      <section className="menuDetals">
-        <h3>Menu</h3>
+      <section className="menuDetails">
+        <h2>Menu</h2>
         {menuItems.map((menuItem) => (<Item menuItem={menuItem} key={menuItem._id} onClick={getCart}/>))}
       </section>
       <section className='cart'>
