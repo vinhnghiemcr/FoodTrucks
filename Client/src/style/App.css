@@ -1,3 +1,10 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .homeContainer {
   background-color: rgba(173, 255, 47, 0.4);
 }
@@ -21,4 +28,8 @@
   background-image: url('../assets/ThemePark.jpeg');
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.classGrid {
+  background-color: antiquewhite;
 }
