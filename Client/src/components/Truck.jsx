@@ -21,23 +21,20 @@ const Truck = () => {
         const response = await axios.get(
           '/food-trucks/:id'
         )
-        if (!isSelected) {
-          setTruck(response)
-        }
+        setTruck(response)
       }
       getTruck()
       const getMenu = async () => {
         const response = await axios.get(
           '/food-trucks/:id/menu/item'
         )
-        if (isSelected) {
           setMenu(response)
-        }
       }
       getMenu()
       const getCart = () => {
 
       }
+      getCart()
     } else if (isSelected) {
       const getReceipt = async () => {
         const response = await axios.get(`${BASE_URL}/receipts/:rID`)
