@@ -1,3 +1,10 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .homeContainer {
   background-color: rgba(173, 255, 47, 0.4);
 }
@@ -12,13 +19,14 @@
   top: 49%;
 }
 
-.bodyApp {
+.truckLocation {
   background-image: url('../assets/ThemePark.png');
   background-size: 80% auto;
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100%;
   min-width: 100%;
+  margin: 30px;
   position: absolute;
   top: 0;
   left: 0;
@@ -43,9 +51,16 @@ nav {
   width: 60%;
   background-color: #ebc391;
   color: #f24130;
+  text-align: left;
 }
 
 img {
-  width: 80px;
+  display: flex;
+  align-content: center;
+  width: 300px;
   height: auto;
+}
+
+.classGrid {
+  background-color: antiquewhite;
 }
