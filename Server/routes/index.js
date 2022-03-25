@@ -14,4 +14,6 @@ router.get('/receipts/:rId', controllers.getReceiptById)
 
 router.get('/items', controllers.getItem)
 
+router.post('/review', controllers.createReview)
+
 module.exports = router

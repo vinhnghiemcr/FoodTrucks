@@ -1,10 +1,12 @@
 import React from 'react'
 
-const Cart = () => {
+const Cart = ({ cart, onClick }) => {
 
   return (
     <div>
-      
+      <h1>Cart</h1>
+      <h3>{cart} Items</h3>
+      <button onClick={onClick}>Checkout</button>
     </div>
   )
 }

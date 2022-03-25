@@ -18,7 +18,7 @@ const HomePage = () => {
   }, [])
 
   return (
-    <div>
+    <div className="truckLocation">
       <MapTruck trucks={trucks} />
     </div>
   )
