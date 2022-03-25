@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import './style/App.css'
 import Nav from './components/Nav'
 import About from './pages/AboutPage'
-import TruckPage from './pages/TruckPage'
+import Truck from './components/Truck'
 import HomePage from './pages/HomePage'
 import React from 'react'
 
@@ -14,7 +14,8 @@ const App = () => {
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/food-truck/:ftid" element={<TruckPage />} />
+          <Route path="/food-trucks/:ftid" element={<Truck />} />
+
         </Routes>
       </main>
     </div>

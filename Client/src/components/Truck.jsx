@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+
+import { useParams } from 'react-router'
+
 import axios from 'axios'
 import Menu from "./Menu"
 import Cart from './Cart'
@@ -8,33 +10,35 @@ import Receipt from './Receipt'
 
 const Truck = () => {
 
-  const [truckDetail, setTruck] = useState()
-  const [menuDetail, setMenu] = useState()
-  const [receipt, setReceipt] = useState()
+  const [truckDetail, setTruck] = useState({})
+  const [menuDetail, setMenu] = useState([])
+  const [receipt, setReceipt] = useState({})
 
   let { ftid } = useParams()
   console.log(ftid)
 
   let isSelected = false
 
+  let { ftid } = useParams()
+
   const BASE_URL = 'http://localhost:3001/api'
 
   useEffect(() => {
     if (!isSelected) {
       const getTruck = async () => {
-        const response = await axios.get(
-          `/food-truck/${ftid}`
-        )
+        const response = await axios.get(`${BASE_URL}/food-trucks/${ftid}`)
+        console.log(response)
         setTruck(response)
       }
       getTruck()
-      const getMenu = async () => {
+      const getMenuItems = async () => {
         const response = await axios.get(
-          '/food-trucks/:id/menu/item'
+          `${BASE_URL}/items`
         )
-          setMenu(response)
+        console.log(response.data)
+        setMenu(response.data)
       }
-      getMenu()
+      getMenuItems()
       const getCart = () => {
 
       }
@@ -58,11 +62,11 @@ const Truck = () => {
   ) : (
     <div className ="truckComponent">
       <div className="truckDetails">
-        <h1>{truckDetail.name}</h1>
-        <img src={truckDetail.img} alt='foodtruck' />
+        {/* <h1>{truckDetail.name}</h1> */}
+        {/* <img src={truckDetail.img} alt='foodtruck' /> */}
       </div>
       <section className="menuDetals">
-        <Menu menu={menuDetail}/>
+        {/* <Menu menu={menuDetail}/> */}
       </section>
       <section className='cart'>
         <Cart onClick={checkout}/>
@@ -70,8 +74,8 @@ const Truck = () => {
     </div>
   )
 
-return (
-  {page}
+return ( <div></div>
+  // {page}
 )
 }
 
