@@ -1,8 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-
 import { useParams } from 'react-router'
-
+import ReactStars from 'react-stars'
 import axios from 'axios'
 import Item from "./Item"
 import Cart from './Cart'
@@ -61,7 +60,8 @@ const Truck = () => {
     <div className ="truckComponent">
       <div className="truckDetails">
         <h1>{truck.name}</h1>
-        <p>{truck.rating}</p>
+        <ReactStars  count={truck.rating}   size={24} edit={false} color2={'yellow'} />
+        
         <img src={truck.image} alt='foodtruck' />
       </div>
       <section className="menuDetals">

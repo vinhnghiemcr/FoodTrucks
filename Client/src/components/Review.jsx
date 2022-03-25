@@ -2,6 +2,7 @@ import axios from 'axios'
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+import ReactStars from 'react-stars'
 
 const Review = ({ truckId }) => {
 
@@ -20,7 +21,7 @@ const Review = ({ truckId }) => {
   }
 
   const saveRating = (e) => {
-    setRating(e.target.value)
+    setRating(e)
   }
 
   const postRequest = () => {
@@ -48,7 +49,8 @@ const Review = ({ truckId }) => {
       <h1>Leave Us A Review!</h1>
       <form onSubmit={postRequest}>
         <input type="text" placeholder='Name' value={name} onChange={saveName} />
-        <input type="number" min="0" max="5" placeholder="Rate us out of 5" value={rating} onChange={saveRating}></input>
+        {/* <input type="number" min="0" max="5" placeholder="Rate us out of 5" value={rating} onChange={saveRating}></input> */}
+        <ReactStars  count={5}  value={rating}  onChange={saveRating} size={24} color2={'#ffd700'} />
         <input type="text" placeholder='Leave us a comment' value={comment} onChange={saveComment}/>
         <button>Submit</button>
       </form>
