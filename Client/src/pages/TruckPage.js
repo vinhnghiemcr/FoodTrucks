@@ -1,3 +1,4 @@
+
 const data = {
   name: 'Express Food Truck',
   menu: {
@@ -18,3 +19,4 @@ const data = {
   image: '',
   reviews: ['hkdsjfgak', 'dskgfka']
 }
+
