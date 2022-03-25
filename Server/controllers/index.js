@@ -13,27 +13,9 @@ const getFoodTrucks = async (req, res) => {
 
 const getFoodTruckById = async (req, res) => {
   try {
-    let data = {}
-    let truck = await FoodTruck.findById(req.params.id)
-    console.log(truck, "first truck")
-    // console.log(truck.menu._id.toString(), "menu id")
-    let menu = await Menu.findById(truck.menu)
-    console.log(menu, " first menu")
     
-    //[id] -> [json]
-    let items = []
-   menu.items.forEach( async function(item) {
-    let newItem =  await Item.findById(item)
-    await items.push({newItem})
-    // data = {items: [{ }]}
-    // console.log({newItem}, " itemmmmmmmmmmmmmm") 
-  })
-    // let items = await getItems(menu.items)
-
-    // console.log(items, " first items")
-    // menu = {...menu, "items" : [...items]}
-    // truck = {...truck, "menu": {...menu}}
-    return res.status(201).send(items)
+    let truck = await FoodTruck.findById(req.params.id)
+    return res.status(201).send(truck)
   } catch (error) {
     return res.status(500).send(error.message)
   }
