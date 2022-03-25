@@ -26,7 +26,7 @@ const getFoodTruckById = async (req, res) => {
         
         console.log(item._id.toString())
         const newItem = await Item.findById(item._id.toString())
-        console.log(newItem, "items");
+        console.log(newItem.name, "items");
         return newItem
       })
     // let items = await getItems(menu.items)
