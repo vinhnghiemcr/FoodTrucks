@@ -66,7 +66,7 @@ const Truck = () => {
       </div>
       <section className="menuDetails">
         <h2>Menu</h2>
-        {menuItems.map((menuItem) => (<Item menuItem={menuItem} key={menuItem._id} onClick={getCart}/>))}
+        {menuItems.map((menuItem) => (<Item menuItem={menuItem} className='item' key={menuItem._id} onClick={getCart}/>))}
       </section>
       <section className='cart'>
         <Cart onClick={checkout} cart={cart}/>
