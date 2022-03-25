@@ -13,7 +13,7 @@ const Truck = () => {
   const [menuItems, setMenuItems] = useState([])
   const [receipt, setReceipt] = useState({})
   const [isSelected, setIsSelected] = useState(false)
-  const [cart, setCart] = useState(0)
+  const [cart, setCart] = useState([])
 
   let { ftid } = useParams()
   console.log(ftid)
@@ -45,8 +45,8 @@ const Truck = () => {
     }
   }, [isSelected, ftid])
 
-  const getCart = () => {
-    setCart(cart+1)
+  const getCart = (e, id) => {  
+        setCart((currentCart) =>{ return [...currentCart, id]})
   }
 
   const checkout = async () => {
@@ -66,7 +66,7 @@ const Truck = () => {
       </div>
       <section className="menuDetals">
         <h3>Menu</h3>
-        {menuItems.map((menuItem) => (<Item menuItem={menuItem} key={menuItem._id} onClick={getCart}/>))}
+        {menuItems.map((menuItem) => (<Item menuItem={menuItem} key={menuItem._id}  onClick={getCart}/>))}
       </section>
       <section className='cart'>
         <Cart onClick={checkout} cart={cart}/>

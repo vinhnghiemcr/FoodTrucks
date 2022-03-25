@@ -61,12 +61,14 @@ const createReview = async (req, res) => {
     await review.save()
     const truckId = req.body.truck
     const truck = await FoodTruck.findById(truckId)
-    // console.log(truck, " truck")
-    // const reviews = truck.reviews
-    // let total = 0
-    // reviews.forEach((review) => {total += valueOf(review.rating); console.log(typeof (review.rating), " total")})
-    // let rating = total / reviews.length
-    // console.log(rating , " rating");
+    console.log(truck.rating, " truck rating")
+    const reviews = truck.reviews
+    console.log(reviews, " Reviews");
+    
+    let total = 0
+    reviews.forEach((review) => {total += valueOf(review.rating); console.log(typeof (review.rating), " total")})
+    let rating = total / reviews.length
+    console.log(rating , " rating");
     
     await FoodTruck.findByIdAndUpdate(truckId, {reviews: [...truck.reviews, review._id] })
     return res.status(201).json(review)
