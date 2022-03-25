@@ -16,6 +16,30 @@ const About = () => {
         <li>Checkout and recieve a recipt</li>
         <li>Leave a review if you want!</li>
       </ul>
+      <h2 className="inst">About Us</h2>
+      <ul>
+        <li>
+          Created by a team of food truck enthused General Assembly students in
+          a day and a half.
+        </li>
+        <li>
+          By:
+          <a href="https://www.linkedin.com/in/canh-vo-056122188/">Canh Vo</a>
+          <a href="https://www.linkedin.com/in/nghiem-v-truong/">
+            Nghiem Truong
+          </a>
+          <a href="https://www.linkedin.com/in/chinwenduukoha/">
+            Chinwendu Ukoha
+          </a>
+          <a href="https://github.com/vinhnghiemcr/FoodTrucks">
+            Molly Obermeier
+          </a>
+        </li>
+        <li>
+          Repositiory:
+          <a href="https://github.com/vinhnghiemcr/FoodTrucks">Food Truck</a>
+        </li>
+      </ul>
     </div>
   )
 }
