@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Item from './Item'
 
@@ -9,6 +10,7 @@ const Menu = (props) => {
       {props.items.map((item) => {
         return <Item name={item.name} description={item.description}/>
       })}
+
     </div>
     )
 }

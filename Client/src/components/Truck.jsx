@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+
 import { useParams } from 'react-router'
+
 import axios from 'axios'
 import Menu from "./Menu"
 import Cart from './Cart'
@@ -12,6 +14,9 @@ const Truck = () => {
   const [menuDetail, setMenu] = useState([])
   const [receipt, setReceipt] = useState({})
 
+  let { ftid } = useParams()
+  console.log(ftid)
+
   let isSelected = false
 
   let { ftid } = useParams()
@@ -21,9 +26,7 @@ const Truck = () => {
   useEffect(() => {
     if (!isSelected) {
       const getTruck = async () => {
-        const response = await axios.get(
-          `${BASE_URL}/food-trucks/${ftid}`
-        )
+        const response = await axios.get(`${BASE_URL}/food-trucks/${ftid}`)
         console.log(response)
         setTruck(response)
       }
@@ -47,7 +50,7 @@ const Truck = () => {
       }
       getReceipt()
     }
-  }, [isSelected])
+  }, [isSelected, ftid])
 
   const checkout = async () => {
     const response = await axios.post(`${BASE_URL}/receipt/:ftid`)

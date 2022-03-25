@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 const TruckLocation = ({ trucks }) => {
 
+  
   return (
     <div>
       {trucks.map((truck) => (
