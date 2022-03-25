@@ -8,7 +8,7 @@ import React from 'react'
 const MapTruck = ({trucks}) => {
 
   return (
-    <div className="truckContainer">
+    <div className="truckContainer foodBalloon" >
         <TruckLocation trucks={trucks}/>
     </div>
   )

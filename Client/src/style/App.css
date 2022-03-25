@@ -15,8 +15,95 @@ main {
   height: 10vh;
   width: 10vh;
   position: fixed;
-  left: 60%;
+  left: 65%;
   top: 58%;
+  animation: truckMoving 5s linear 2s infinite alternate;
+}
+
+.foodBalloon {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../assets/Asset3.png');
+  background-size: 45px 70px;
+  background-repeat: no-repeat;
+  height: 10vh;
+  width: 10vh;
+  position: fixed;
+  animation: balloonMoving 4s linear 0s infinite alternate;
+  left: 85%;
+  top: 40%;
+}
+
+@keyframes balloonMoving {
+  0% {
+    top: 40%;
+  }
+  5% {
+    top: 38;
+  }
+  10% {
+    top: 36%;
+  }
+  15% {
+    top: 34%;
+  }
+  20% {
+    top: 32%;
+  }
+  25% {
+    top: 30%;
+  }
+  30% {
+    top: 28%;
+  }
+}
+
+.foodBalloon {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  background-image: url('../assets/Asset3.png');
+  background-size: 45px 70px;
+  background-repeat: no-repeat;
+  height: 10vh;
+  width: 10vh;
+  position: fixed;
+  left: 85%;
+  top: 28%;
+}
+
+@keyframes truckMoving {
+  0% {
+    left: 60%;
+  }
+  5% {
+    left: 61%;
+  }
+  10% {
+    left: 62%;
+  }
+  15% {
+    left: 63%;
+  }
+  20% {
+    left: 64%;
+  }
+  25% {
+    left: 65%;
+  }
+  30% {
+    left: 66%;
+  }
+  35% {
+    left: 67%;
+  }
+  40% {
+    left: 68%;
+  }
+  45% {
+    left: 69%;
+  }
 }
 
 .truckLocation {
