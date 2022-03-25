@@ -1,3 +1,5 @@
+import Truck from '../components/Truck'
+import React from 'react'
 
 const data = {
   name: 'Express Food Truck',
@@ -20,3 +22,12 @@ const data = {
   reviews: ['hkdsjfgak', 'dskgfka']
 }
 
+const TruckPage = () => {
+  return (
+    <div>
+      <Truck />
+    </div>
+  )
+}
+
+export default TruckPage
