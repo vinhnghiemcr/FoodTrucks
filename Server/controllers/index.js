@@ -1,4 +1,6 @@
-const getFoodTrucks = (req, res) => {
+const { FoodTruck, Receipt, Item, Menu } = require('../models/index')
+
+const getFoodTrucks = async (req, res) => {
   try {
     const truck = await FoodTruck.find()
     return res.status(201).send(truck)
@@ -7,18 +9,47 @@ const getFoodTrucks = (req, res) => {
   }
 }
 
-const getFoodTruckById = (req, res) => {
+
+
+const getFoodTruckById = async (req, res) => {
   try {
-    const truck = await FoodTruck.findById()
-    return res.status(201).send(truck)
+    let data = {}
+    let truck = await FoodTruck.findById(req.params.id)
+    console.log(truck, "first truck")
+    // console.log(truck.menu._id.toString(), "menu id")
+    let menu = await Menu.findById(truck.menu)
+    console.log(menu, " first menu")
+    
+    //[id] -> [json]
+   
+    const items = menu.items.map( async (item) => {
+        
+        console.log(item)
+        const newItem = await Item.findById(item)
+        console.log(newItem, "items");
+        return newItem.name
+      })
+    // let items = await getItems(menu.items)
+
+    console.log(items, " first items")
+    // menu = {...menu, "items" : [...items]}
+    // truck = {...truck, "menu": {...menu}}
+    return res.status(201).send(items)
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
-
-const createReceipt = (req, res) => {
+//623ca6e0cf038b9d83833ece
+const getItems = (array) => {
+   return array.map(async (item) => {
+      await Item.findById(item._id.toString())
+    })
+}
+ 
+const createReceipt = async (req, res) => {
   try {
-    const receipt = await new Receipt()
+    console.log(req.body)
+    const receipt = await new Receipt(req.body)
     await receipt.save()
     return res.status(201).json({ receipt })
   } catch (error) {
@@ -26,7 +57,7 @@ const createReceipt = (req, res) => {
   }
 }
 
-const getReceipts = (req, res) => {
+const getReceipts = async (req, res) => {
   try {
     const receipt = await Receipt.find()
     return res.status(201).send(receipt)
@@ -35,9 +66,9 @@ const getReceipts = (req, res) => {
   }
 }
 
-const getReceiptById = (req, res) => {
+const getReceiptById = async (req, res) => {
   try {
-    const receipt = await Receipt.findById()
+    const receipt = await Receipt.findById(req.params.id)
     return res.status(201).send(receipt)
   } catch (error) {
     return res.status(500).send(error.message)
