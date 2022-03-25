@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 
 const TruckLocation = ({ trucks }) => {
 
+  
   return (
-    <div>
-      {trucks.map((truck) => (
-        <Link to={`/food-truck`} key={truck._id}>
-          <img src={Truck} className="foodTruckIcon"/>
+    <div className='truckLocation'>
+      {trucks.map((truck) => ( 
+        <Link to={`/food-truck/${truck._id}`} key={truck._id}>
+          <img src={Truck} className="foodTruckIcon"></img>
         </Link>
       ))}
     </div>

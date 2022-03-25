@@ -1,5 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Menu from "./Menu"
 import Cart from './Cart'
@@ -11,6 +12,9 @@ const Truck = () => {
   const [menuDetail, setMenu] = useState()
   const [receipt, setReceipt] = useState()
 
+  let { ftid } = useParams()
+  console.log(ftid)
+
   let isSelected = false
 
   const BASE_URL = 'http://localhost:3001/api'
@@ -19,7 +23,7 @@ const Truck = () => {
     if (!isSelected) {
       const getTruck = async () => {
         const response = await axios.get(
-          '/food-trucks/:id'
+          `/food-truck/${ftid}`
         )
         setTruck(response)
       }
@@ -42,7 +46,7 @@ const Truck = () => {
       }
       getReceipt()
     }
-  }, [isSelected])
+  }, [isSelected, ftid])
 
   const checkout = async () => {
     const response = await axios.post(`${BASE_URL}/receipt/:ftid`)
