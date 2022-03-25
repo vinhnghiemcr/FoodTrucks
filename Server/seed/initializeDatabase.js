@@ -71,7 +71,7 @@ const main = async () => {
   await menu1.save()
 
   const foodTruck1 = await new FoodTruck({
-    name: 'Express Kitchen',
+    name: 'Express Taco Kitchen',
     menu: menu1._id,
     location: 'Northwest of the park',
     image:
@@ -150,7 +150,7 @@ const main = async () => {
   await menu2.save()
 
   const foodTruck2 = await new FoodTruck({
-    name: 'Express Kitchen',
+    name: 'Wendylicious Nigerian Cuisine',
     menu: menu2._id,
     location: 'North of the park',
     image: 'https://media0.giphy.com/media/feiLHLNf3X2zTHNJwS/giphy.gif',
@@ -235,7 +235,7 @@ const main = async () => {
   await menu3.save()
 
   const foodTruck3 = await new FoodTruck({
-    name: 'Express Kitchen',
+    name: 'MCNC Icecream Truck',
     menu: menu3._id,
     location: 'East of the park',
     image:
