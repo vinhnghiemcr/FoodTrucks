@@ -4,43 +4,39 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
 
 import axios from 'axios'
-import Menu from "./Menu"
+import Item from "./Item"
 import Cart from './Cart'
 import Receipt from './Receipt'
 
 const Truck = () => {
 
-  const [truckDetail, setTruck] = useState({})
-  const [menuDetail, setMenu] = useState([])
+  const [truck, setTruck] = useState({})
+  const [menuItems, setMenuItems] = useState([])
   const [receipt, setReceipt] = useState({})
+  const [isSelected, setIsSelected] = useState(false)
+  const [cart, setCart] = useState(0)
 
   let { ftid } = useParams()
   console.log(ftid)
-
-  let isSelected = false
 
   const BASE_URL = 'http://localhost:3001/api'
 
   useEffect(() => {
     if (!isSelected) {
       const getTruck = async () => {
-        const response = await axios.get(`${BASE_URL}/food-trucks/${ftid}`)
-        console.log(response)
-        setTruck(response)
+        const response = await axios.get(
+          `${BASE_URL}/food-trucks/${ftid}`
+        )
+        setTruck(response.data)
       }
       getTruck()
       const getMenuItems = async () => {
         const response = await axios.get(
           `${BASE_URL}/items`
         )
-        console.log(response.data)
-        setMenu(response.data)
+        setMenuItems(response.data)
       }
       getMenuItems()
-      const getCart = () => {
-
-      }
-      getCart()
     } else if (isSelected) {
       const getReceipt = async () => {
         const response = await axios.get(`${BASE_URL}/receipts/:rID`)
@@ -50,9 +46,13 @@ const Truck = () => {
     }
   }, [isSelected, ftid])
 
+  const getCart = () => {
+    setCart(cart+1)
+  }
+
   const checkout = async () => {
     const response = await axios.post(`${BASE_URL}/receipt/:ftid`)
-    isSelected = true
+    setIsSelected(true)
   }
 
   let page = isSelected ? (
@@ -60,21 +60,20 @@ const Truck = () => {
   ) : (
     <div className ="truckComponent">
       <div className="truckDetails">
-        {/* <h1>{truckDetail.name}</h1> */}
-        {/* <img src={truckDetail.img} alt='foodtruck' /> */}
+        <h1>{truck.name}</h1> 
+        <img src={truck.image} alt='foodtruck' />
       </div>
       <section className="menuDetals">
-        {/* <Menu menu={menuDetail}/> */}
+        <h3>Menu</h3>
+        {menuItems.map((menuItem) => (<Item menuItem={menuItem} key={menuItem._id} onClick={getCart}/>))}
       </section>
       <section className='cart'>
-        <Cart onClick={checkout}/>
+        <Cart onClick={checkout} />
       </section>
     </div>
   )
 
-return ( <div></div>
-  // {page}
-)
+return page
 }
 
 export default Truck
