@@ -1,7 +1,7 @@
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   text-align: center;
 }
 
@@ -15,21 +15,86 @@ main {
   height: 10vh;
   width: 10vh;
   position: fixed;
-  left: 80%;
-  top: 51%;
+  left: 60%;
+  top: 48%;
 }
 
-.truckContainer {
+.truckLocation {
   min-height: 100%;
   min-width: 100%;
   position: fixed;
+  margin: 10px 60px;
   top: 0;
   left: 0;
-  background-image: url('../assets/ThemePark.jpeg');
+  background-image: url('../assets/ThemePark.png');
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.classGrid {
-  background-color: antiquewhite;
+.aboutPage {
+  margin: 10px 0;
+  padding: 10px;
+  width: 60%;
+  background-color: #f2a341;
+  color: #f24130;
+}
+
+.menuDetails {
+  background-color: #b8bad9;
+  padding: 20px;
+  width: 20%;
+  margin: 40px;
+}
+
+.menuDetails:hover {
+  background-color: #b8d9d1;
+  padding: 20px;
+  width: 20%;
+  margin: 40px;
+}
+
+.truckComponent {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  font-family: 'Bungee', cursive;
+}
+
+.inst {
+  text-align: left;
+}
+
+.cart {
+  margin: 10px;
+  padding: 50px 0px;
+}
+
+.truckDetails {
+  color: #f2a516;
+  font-family: 'Bungee', cursive;
+}
+
+h2,
+h1 {
+  font-family: 'Monoton', cursive;
+}
+
+nav {
+  font-family: 'Monoton', cursive;
+}
+
+ul {
+  text-align: left;
+}
+
+img {
+  width: 80%;
+}
+
+button {
+  background-color: #f2522e;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
 }
