@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import './style/App.css'
 import Nav from './components/Nav'
 import About from './pages/AboutPage'
-import Truck from './components/Truck'
 
 import HomePage from './pages/HomePage'
 import React from 'react'
