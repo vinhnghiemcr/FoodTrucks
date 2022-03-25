@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom'
-import './style/App.css'
 import Nav from './components/Nav'
 import About from './pages/AboutPage'
 import HomePage from './pages/HomePage'
+import TruckPage from './pages/TruckPage'
 import React from 'react'
-import Truck from './components/Truck'
+import './style/App.css'
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/food-trucks/:ftid" element={<Truck />} />
+          <Route path="/food-trucks/:ftid" element={<TruckPage />} />
         </Routes>
       </main>
     </div>
