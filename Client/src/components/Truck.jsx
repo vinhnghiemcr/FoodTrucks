@@ -56,11 +56,12 @@ const Truck = () => {
   }
 
   let page = isSelected ? (
-    <Receipt details={receipt} cart={cart}/>
+    <Receipt truckId={truck._id} details={receipt} cart={cart}/>
   ) : (
     <div className ="truckComponent">
       <div className="truckDetails">
-        <h1>{truck.name}</h1> 
+        <h1>{truck.name}</h1>
+        <p>{truck.rating}</p>
         <img src={truck.image} alt='foodtruck' />
       </div>
       <section className="menuDetails">

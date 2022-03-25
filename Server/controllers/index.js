@@ -1,4 +1,4 @@
-const { FoodTruck, Receipt, Item, Menu } = require('../models/index')
+const { FoodTruck, Receipt, Item, Menu, Review } = require('../models/index')
 
 const getFoodTrucks = async (req, res) => {
   try {
@@ -55,11 +55,29 @@ const getItem = async (req, res) => {
   }
 }
 
+const createReview = async (req, res) => {
+  try {
+    const review = await new Review(req.body)
+    await review.save()
+    const truckId = req.body.truck
+    const truck = await FoodTruck.findById(truckId)
+    const reviews = truck.reviews
+    let total = 0
+    reviews.forEach((review) => (total += review.rating))
+    let rating = total / review.length
+    await FoodTruck.findByIdAndUpdate(truckId, { rating: rating })
+    return res.status(201).json(review)
+  } catch (error) {
+    return res.status(500).json({ error: error.message })
+  }
+}
+
 module.exports = {
   getFoodTrucks,
   getFoodTruckById,
   createReceipt,
   getReceipts,
   getReceiptById,
-  getItem
+  getItem,
+  createReview
 }
