@@ -21,17 +21,16 @@ const getFoodTruckById = async (req, res) => {
     console.log(menu, " first menu")
     
     //[id] -> [json]
-   
-    const items = menu.items.map( async (item) => {
-        
-        console.log(item)
-        const newItem = await Item.findById(item)
-        console.log(newItem, "items");
-        return newItem.name
-      })
+    let items = []
+   menu.items.forEach( async function(item) {
+    let newItem =  await Item.findById(item)
+    await items.push({newItem})
+    // data = {items: [{ }]}
+    // console.log({newItem}, " itemmmmmmmmmmmmmm") 
+  })
     // let items = await getItems(menu.items)
 
-    console.log(items, " first items")
+    // console.log(items, " first items")
     // menu = {...menu, "items" : [...items]}
     // truck = {...truck, "menu": {...menu}}
     return res.status(201).send(items)
