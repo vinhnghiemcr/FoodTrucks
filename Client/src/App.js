@@ -3,12 +3,14 @@ import './style/App.css'
 import Nav from './components/Nav'
 import About from './pages/AboutPage'
 import Truck from './components/Truck'
+
 import HomePage from './pages/HomePage'
 import React from 'react'
+import Truck from './components/Truck'
 
 const App = () => {
   return (
-    <div>
+    <div className="bodyApp">
       <Nav />
       <main>
         <Routes>

@@ -1,6 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+
 import { useParams } from 'react-router'
+
 import axios from 'axios'
 import Item from "./Item"
 import Cart from './Cart'
@@ -15,6 +17,7 @@ const Truck = () => {
   const [cart, setCart] = useState(0)
 
   let { ftid } = useParams()
+  console.log(ftid)
 
   const BASE_URL = 'http://localhost:3001/api'
 
@@ -41,7 +44,7 @@ const Truck = () => {
       }
       getReceipt()
     }
-  }, [isSelected])
+  }, [isSelected, ftid])
 
   const getCart = () => {
     setCart(cart+1)
