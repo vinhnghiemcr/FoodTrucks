@@ -24,10 +24,10 @@ const getFoodTruckById = async (req, res) => {
    
     const items = menu.items.map( async (item) => {
         
-        console.log(item._id.toString())
-        const newItem = await Item.findById(item._id.toString())
-        console.log(newItem.name, "items");
-        return newItem
+        console.log(item)
+        const newItem = await Item.findById(item)
+        console.log(newItem, "items");
+        return newItem.name
       })
     // let items = await getItems(menu.items)
 
