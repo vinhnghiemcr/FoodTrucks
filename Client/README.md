@@ -37,6 +37,8 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 
 ## **_Screenshots_**
 
+![](../Client/src/assets/exampleImage.png)
+
 ## **_Future Updates_**
 
 #### After completing this project we would like to add many more capabilities, including the functionalities below:
@@ -50,3 +52,9 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 ## **_Credits_**
 
 Images: [Google](https://www.google.com/)
+
+Theme Park Image: [Pinterest](https://www.pinterest.com/pin/741757001137017881/)
+
+Food Truck: [Giphy](https://giphy.com/gifs/food-cartoon-truck-d31vot4Yoy9r8dwY)
+
+Fonts: [Google Fonts](https://fonts.google.com/)
