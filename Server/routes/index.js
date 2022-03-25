@@ -4,7 +4,7 @@ const router = Router()
 
 router.get('/food-trucks', controllers.getFoodTrucks)
 
-router.get('/food-trucks/:id', controllers.getFoodTruckById)
+router.get('/food-trucks/:ftid', controllers.getFoodTruckById)
 
 router.post('/receipt/:ftid', controllers.createReceipt)
 

@@ -13,8 +13,8 @@ const getFoodTrucks = async (req, res) => {
 
 const getFoodTruckById = async (req, res) => {
   try {
-    const truck = await FoodTruck.findById(req.params.id)
-    return res.status(201).send(truck)
+    const truck = await FoodTruck.findById(req.params.ftid)
+    return res.status(201).json(truck)
   } catch (error) {
     return res.status(500).send(error.message)
   }

@@ -7,25 +7,27 @@ import Cart from './Cart'
 import Receipt from './Receipt'
 
 const Truck = () => {
-
-  const [truckDetail, setTruck] = useState()
-  const [menuDetail, setMenu] = useState()
-  const [receipt, setReceipt] = useState()
+  // const [ftid, setFTID] = useState('')
+  const [truckDetail, setTruck] = useState({})
+  const [menuDetail, setMenu] = useState({})
+  const [receipt, setReceipt] = useState({})
+  const [isSelected, setIsSelected] = useState(false)
 
   let { ftid } = useParams()
   console.log(ftid)
 
-  let isSelected = false
+  // let isSelected = false
 
   const BASE_URL = 'http://localhost:3001/api'
 
   useEffect(() => {
     if (!isSelected) {
       const getTruck = async () => {
-        const response = await axios.get(
-          `/food-truck/${ftid}`
-        )
+        const response = await axios.get(`${BASE_URL}/food-trucks/${ftid}`)
+        // const response = await axios.get(`http://localhost:3001/api/food-trucks/623ca6e1cf038b9d83833ed7`)
+        console.log(`${BASE_URL}/food-trucks/${ftid}` , "URL")
         setTruck(response)
+        console.log(response, "Truck details")
       }
       getTruck()
       const getMenu = async () => {

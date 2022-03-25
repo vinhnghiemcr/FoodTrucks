@@ -5,6 +5,7 @@ import About from './pages/AboutPage'
 import TruckPage from './pages/TruckPage'
 import HomePage from './pages/HomePage'
 import React from 'react'
+import Truck from './components/Truck'
 
 const App = () => {
   return (
@@ -14,7 +15,7 @@ const App = () => {
         <Routes>
           <Route index element={<HomePage />} />
           <Route path="/about" element={<About />} />
-          <Route path="/food-truck/:ftid" element={<TruckPage />} />
+          <Route path="/food-truck/:ftid" element={<Truck />} />
         </Routes>
       </main>
     </div>
