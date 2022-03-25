@@ -47,10 +47,14 @@ const main = async () => {
     // })
 
     // await Product.insertMany(products)
+    
     console.log('Created products!')
   }
   
   const run = async () => {
+    Item.deleteMany()
+    Menu.deleteMany()
+    FoodTruck.deleteMany()
     await main()
     db.close()
   }
