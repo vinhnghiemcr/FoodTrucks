@@ -11,7 +11,6 @@ const MapTruck = ({trucks}) => {
     <div className="truckContainer">
         <TruckLocation trucks={trucks}/>
     </div>
-
   )
 }
 
