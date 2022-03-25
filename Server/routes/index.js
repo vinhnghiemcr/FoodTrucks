@@ -12,5 +12,6 @@ router.get('/receipt/:ftid', controllers.getReceipts)
 
 router.get('/receipts/:rId', controllers.getReceiptById)
 
-module.exports = router
+router.get('/items', controllers.getItem)
 
+module.exports = router

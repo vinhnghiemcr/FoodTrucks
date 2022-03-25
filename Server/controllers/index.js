@@ -9,26 +9,17 @@ const getFoodTrucks = async (req, res) => {
   }
 }
 
-
-
 const getFoodTruckById = async (req, res) => {
   try {
-    const truck = await FoodTruck.findById(req.params.ftid)
-    return res.status(201).json(truck)
+    let truck = await FoodTruck.findById(req.params.ftid)
+    return res.status(201).send(truck)
   } catch (error) {
     return res.status(500).send(error.message)
   }
 }
-//623ca6e0cf038b9d83833ece
-const getItems = (array) => {
-   return array.map(async (item) => {
-      await Item.findById(item._id.toString())
-    })
-}
- 
+
 const createReceipt = async (req, res) => {
   try {
-    console.log(req.body)
     const receipt = await new Receipt(req.body)
     await receipt.save()
     return res.status(201).json({ receipt })
@@ -55,10 +46,20 @@ const getReceiptById = async (req, res) => {
   }
 }
 
+const getItem = async (req, res) => {
+  try {
+    const items = await Item.find()
+    return res.status(201).send(items)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   getFoodTrucks,
   getFoodTruckById,
   createReceipt,
   getReceipts,
-  getReceiptById
+  getReceiptById,
+  getItem
 }
