@@ -16,7 +16,7 @@ main {
   width: 10vh;
   position: fixed;
   left: 55%;
-  top: 60%;
+  top: 58%;
   animation: truckMoving 5s linear 2s infinite alternate;
 }
 
