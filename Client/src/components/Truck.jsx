@@ -51,12 +51,12 @@ const Truck = () => {
   }
 
   const checkout = async () => {
-    const response = await axios.post(`${BASE_URL}/receipt/:ftid`)
+    // const response = await axios.post(`${BASE_URL}/receipt/:ftid`)
     setIsSelected(true)
   }
 
   let page = isSelected ? (
-    <Receipt details={receipt}/>
+    <Receipt details={receipt} cart={cart}/>
   ) : (
     <div className ="truckComponent">
       <div className="truckDetails">
@@ -68,7 +68,7 @@ const Truck = () => {
         {menuItems.map((menuItem) => (<Item menuItem={menuItem} key={menuItem._id} onClick={getCart}/>))}
       </section>
       <section className='cart'>
-        <Cart onClick={checkout} />
+        <Cart onClick={checkout} cart={cart}/>
       </section>
     </div>
   )

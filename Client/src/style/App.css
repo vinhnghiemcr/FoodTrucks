@@ -12,53 +12,22 @@ main {
 .foodTruckIcon {
   display: flex;
   flex-direction: column;
-  height: auto;
-  width: 8%;
+  height: 10vh;
+  width: 10vh;
   position: fixed;
-  left: 55%;
-  top: 49%;
+  left: 80%;
+  top: 51%;
 }
 
-.truckLocation {
-  background-image: url('../assets/ThemePark.png');
-  background-size: 80% auto;
-  background-repeat: no-repeat;
-  background-position: center;
+.truckContainer {
   min-height: 100%;
   min-width: 100%;
-  margin: 30px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-}
-
-h1 {
-  padding: 0;
-  margin: 0;
-}
-
-nav {
-  margin: 10px;
-  font-family: 'Monoton', cursive;
-  color: black;
-  font-size: 20px;
-  width: 60%;
-}
-
-.aboutPage {
-  margin: 10px;
-  padding: 10px;
-  width: 60%;
-  background-color: #ebc391;
-  color: #f24130;
-  text-align: left;
-}
-
-img {
-  display: flex;
-  align-content: center;
-  width: 300px;
-  height: auto;
+  background-image: url('../assets/ThemePark.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .classGrid {

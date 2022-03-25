@@ -1,6 +1,6 @@
 const { Schema } = require('mongoose')
 
-const Product = new Schema(
+const Receipt = new Schema(
   {
     items: [{ type: Schema.Types.ObjectId, ref: 'Item', required: true }],
     totalCost: { type: Number, required: true },
@@ -11,6 +11,6 @@ const Product = new Schema(
   { timestamps: true }
 )
 
-module.exports = Product
+module.exports = Receipt
 
 // 623cb28083a8621966c335ec
