@@ -54,6 +54,14 @@ const getItem = async (req, res) => {
     return res.status(500).send(error.message)
   }
 }
+const getItemById = async (req, res) => {
+  try {
+    const item = await Item.findById(req.params.id)
+    return res.status(201).send(item)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
 
 module.exports = {
   getFoodTrucks,
@@ -61,5 +69,6 @@ module.exports = {
   createReceipt,
   getReceipts,
   getReceiptById,
-  getItem
+  getItem,
+  getItemById
 }

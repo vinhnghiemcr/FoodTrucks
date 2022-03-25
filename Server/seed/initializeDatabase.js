@@ -22,15 +22,9 @@ const main = async () => {
       })
     await item3.save()
 
-    const menu1 = await new Menu({
-        name: 'First Menu',
-        items: [item1._id, item2._id, item3._id]
-    })
-    await menu1.save()
-
     const foodTruck1 = await new FoodTruck({
         name: 'Express Kitchen',
-        menu: menu1._id,
+        menu: [item1._id, item2._id, item3._id],
         location: 'Northwest of the park',
         image: 'https://media1.sacurrent.com/sacurrent/imager/u/original/25026533/ron_bechtol.jpg',
         rating: 5,
@@ -52,9 +46,9 @@ const main = async () => {
   }
   
   const run = async () => {
-    Item.deleteMany()
-    Menu.deleteMany()
-    FoodTruck.deleteMany()
+    await Item.deleteMany()
+    await Menu.deleteMany()
+    await FoodTruck.deleteMany()
     await main()
     db.close()
   }

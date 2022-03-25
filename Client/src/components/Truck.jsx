@@ -5,6 +5,7 @@ import axios from 'axios'
 import Menu from "./Menu"
 import Cart from './Cart'
 import Receipt from './Receipt'
+import Item from './Item'
 
 const Truck = () => {
 
@@ -15,7 +16,7 @@ const Truck = () => {
   let { ftid } = useParams()
   console.log(ftid)
 
-  // let isSelected = false
+  let isSelected = false
 
   const BASE_URL = 'http://localhost:3001/api'
 
@@ -28,14 +29,14 @@ const Truck = () => {
         console.log(response, "Truck details")
       }
       getTruck()
-      const getMenuItems = async () => {
-        const response = await axios.get(
-          `${BASE_URL}/items`
-        )
-        console.log(response.data)
-        setMenu(response.data)
-      }
-      getMenuItems()
+      // const getMenuItems = async () => {
+      //   const response = await axios.get(
+      //     `${BASE_URL}/items`
+      //   )
+      //   console.log(response.data)
+      //   setMenu(response.data)
+      // }
+      // getMenuItems()
       const getCart = () => {
 
       }
@@ -59,11 +60,11 @@ const Truck = () => {
   ) : (
     <div className ="truckComponent">
       <div className="truckDetails">
-        {/* <h1>{truckDetail.name}</h1> */}
-        {/* <img src={truckDetail.img} alt='foodtruck' /> */}
+        <h1>{truckDetail.name}</h1>
+        <img src={truckDetail.img} alt='foodtruck' />
       </div>
-      <section className="menuDetals">
-        {/* <Menu menu={menuDetail}/> */}
+      <section className="menuDetails">
+        {truckDetail.menu.map((item) => (<Item itemId={item} />))}
       </section>
       <section className='cart'>
         <Cart onClick={checkout}/>
@@ -71,9 +72,8 @@ const Truck = () => {
     </div>
   )
 
-return ( <div></div>
-  // {page}
-)
+return page
+
 }
 
 export default Truck
