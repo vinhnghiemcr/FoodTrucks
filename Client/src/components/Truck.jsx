@@ -1,15 +1,20 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { useEffect } from 'react'
 import ReactStars from 'react-stars'
 import Item from "./Item"
 import Cart from './Cart'
 import Receipt from './Receipt'
+import axios from 'axios'
 
-const Truck = ({truck, cart, setCart, isSelected, setIsSelected, receipt,  menuItems }) => {
-
- 
-  const addToCart = (e, id) => {  
-    console.log( truck.rating, "RATIIIINNGGGGGGGGGGGGG")
+const Truck = ({BASE_URL,truck, cart, setCart, isSelected, setIsSelected, receipt,  menuItems }) => {
+  const [menu, setMenu] = useState({})
+  useEffect (async () => {
+    const response = await axios.get(`${BASE_URL}/menu/${truck.menu}`)
+    console.log(response, 'ITEMMMMMMMMMMMMMMMMMMMMMMMMMMMM')
+    setMenu(response)
+  }, [] )
+  
+  const addToCart = (e, id) => {
         setCart((currentCart) =>{ return [...currentCart, id]})
   }
 
@@ -30,9 +35,9 @@ const Truck = ({truck, cart, setCart, isSelected, setIsSelected, receipt,  menuI
     // const response = await axios.post(`${BASE_URL}/receipt/:ftid`)
     setIsSelected(true)
   }
-  console.log(truck.rating, "Ratingggggggggggg")
+
   let page = isSelected ? (
-    <Receipt truckId={truck._id} menuItems={menuItems} details={receipt} cart={cart}/>
+    <Receipt truckId={truck._id} menuItems={menuItems} cart={cart}/>
   ) : (
     <div className ="truckComponent">
       <div className="truckDetails">
@@ -44,8 +49,8 @@ const Truck = ({truck, cart, setCart, isSelected, setIsSelected, receipt,  menuI
 
       <section className="menuDetails">
         <h2>Menu</h2>
-        {menuItems.map((menuItem) => 
-        (<Item menuItem={menuItem} className='item' key={menuItem._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
+        {menu.items.map((itemId) => 
+        (<Item BASE_URL={BASE_URL} itemId={itemId} className='item' key={menu._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
 
       </section>
       <section className='cart'>

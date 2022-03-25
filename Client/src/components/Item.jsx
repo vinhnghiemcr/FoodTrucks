@@ -1,17 +1,24 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 
-const Item = ({ menuItem, onClickAdd, onClickMinus }) => {
+const Item = ({ BASE_URL, itemId, onClickAdd, onClickMinus }) => {
 
-  
+    const [item, setItem] = useState({})
+
+    useEffect( async ()=>{
+      const response = await axios.get(`${BASE_URL}/item/${itemId}`)
+      setItem(response)
+    }, [])
+    
   return (
     <div className='Item'>
       <div className="itemName" >
-        <img src={menuItem.image} alt='food-image-picture'/>
-        <h3>{menuItem.name}</h3>
-        <h5>{menuItem.description}</h5>
-        <h5>{menuItem.price}</h5>
-        <button onClick={(e) => onClickAdd(e, menuItem._id)}>+</button>
-        <button onClick={(e) => onClickMinus(e, menuItem._id)}>-</button>
+        <img src={item.image} alt='food-image-picture'/>
+        <h3>{item.name}</h3>
+        <h5>{item.description}</h5>
+        <h5>{item.price}</h5>
+        <button onClick={(e) => onClickAdd(e, item._id)}>+</button>
+        <button onClick={(e) => onClickMinus(e, item._id)}>-</button>
       </div>
     </div>
   )

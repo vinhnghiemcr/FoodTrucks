@@ -12,6 +12,7 @@ const HomePage = () => {
   useEffect(() => {
     const getTrucks = async () => {
       const response = await axios.get(`${BASE_URL}/food-trucks`)
+      console.log(response.data, " MANY TRUCKS")
       setTruck(response.data)
     }
     getTrucks()
