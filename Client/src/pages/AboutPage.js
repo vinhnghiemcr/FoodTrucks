@@ -36,7 +36,7 @@ const About = () => {
           </a>
         </li>
         <li>
-          Repositiory:
+          Repository:
           <a href="https://github.com/vinhnghiemcr/FoodTrucks">Food Truck</a>
         </li>
       </ul>
