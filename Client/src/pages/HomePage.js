@@ -20,11 +20,7 @@ const HomePage = () => {
 
   return (
     <div>
-<<<<<<< HEAD
       <MapTruck trucks={trucks} />
-=======
-      <Map trucks={trucks} />
->>>>>>> b5bc1dda60bb462f72274ebe412881cd830a2b7c
     </div>
   )
 }
