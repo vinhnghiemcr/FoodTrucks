@@ -6,8 +6,12 @@ const Nav = () => {
   return (
     <header>
       <nav>
-        <Link to='/'>Home</Link>
-        <Link to='./about'>About</Link>
+        <div className='homeNav'>
+          <Link to='/'>Home</Link>
+        </div>
+        <div className='aboutNav'>
+          <Link to='./about'>About</Link>
+        </div>
       </nav>
     </header>
   )

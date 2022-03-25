@@ -1,8 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-
 import { useParams } from 'react-router'
-
 import axios from 'axios'
 import Menu from "./Menu"
 import Cart from './Cart'
@@ -18,7 +16,6 @@ const Truck = () => {
   console.log(ftid)
 
   // let isSelected = false
-
 
   const BASE_URL = 'http://localhost:3001/api'
 
