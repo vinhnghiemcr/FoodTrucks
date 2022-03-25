@@ -19,8 +19,6 @@ const Truck = () => {
 
   let isSelected = false
 
-  let { ftid } = useParams()
-
   const BASE_URL = 'http://localhost:3001/api'
 
   useEffect(() => {

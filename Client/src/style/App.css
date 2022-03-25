@@ -1,21 +1,51 @@
+.homeContainer {
+  background-color: rgba(173, 255, 47, 0.4);
+}
+
 .foodTruckIcon {
   display: flex;
   flex-direction: column;
-  height: 10vh;
-  width: 10vh;
+  height: auto;
+  width: 8%;
   position: fixed;
-  left: 60%;
-  top: 57%;
+  left: 55%;
+  top: 49%;
 }
 
-.truckLocation {
-  margin: 60px;
-  min-height: 100%;
-  min-width: 100%;
-  position: fixed;
-  top: 10;
-  left: 0;
-  background-image: url('../assets/ThemePark.jpeg');
+.bodyApp {
+  background-image: url('../assets/ThemePark.png');
+  background-size: 80% auto;
   background-repeat: no-repeat;
   background-position: center;
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  margin: 10px;
+  font-family: 'Monoton', cursive;
+  color: black;
+  font-size: 20px;
+  width: 60%;
+}
+
+.aboutPage {
+  margin: 10px;
+  padding: 10px;
+  width: 60%;
+  background-color: #ebc391;
+  color: #f24130;
+}
+
+img {
+  width: 80px;
+  height: auto;
 }
