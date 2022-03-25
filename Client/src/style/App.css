@@ -16,14 +16,14 @@ main {
   width: 10vh;
   position: fixed;
   left: 60%;
-  top: 48%;
+  top: 58%;
 }
 
 .truckLocation {
   min-height: 100%;
   min-width: 100%;
   position: fixed;
-  margin: 10px 60px;
+  margin: 100px 60px;
   top: 0;
   left: 0;
   background-image: url('../assets/ThemePark.png');
@@ -74,9 +74,27 @@ main {
   font-family: 'Bungee', cursive;
 }
 
+.stars {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: #f2522e;
+  margin: 10px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b8d9d1;
+  margin: 10px;
+}
+
 h2,
 h1 {
   font-family: 'Monoton', cursive;
+  padding: 0;
+  margin: 0 10px;
 }
 
 nav {
@@ -94,7 +112,8 @@ img {
 button {
   background-color: #f2522e;
   color: white;
-  padding: 5px;
+  padding: 10px;
+  margin: 5px;
   border-radius: 10px;
   border: none;
 }

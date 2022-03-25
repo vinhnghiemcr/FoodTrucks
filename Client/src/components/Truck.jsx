@@ -74,7 +74,7 @@ const Truck = () => {
     <div className ="truckComponent">
       <div className="truckDetails">
         <h1>{truck.name}</h1>
-        <ReactStars  count={truck.rating}   size={24} edit={false} color2={'yellow'} />
+        <ReactStars  count={truck.rating}  className='stars'  size={24} edit={false} color2={'yellow'} />
         
         <img src={truck.image} alt='foodtruck' />
       </div>

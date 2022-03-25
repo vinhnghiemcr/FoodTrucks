@@ -12,8 +12,6 @@ const Nav = () => {
         </div>
         <div className='homeNav'>
           <Link to='/'>Home</Link>
-        </div>
-        <div className='aboutNav'>
           <Link to='./about'>About</Link>
         </div>
       </nav>
