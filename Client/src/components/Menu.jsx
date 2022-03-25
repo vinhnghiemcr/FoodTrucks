@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from './Item'
 
-const Menu = (props) => {
+const Menu = ({ menuItem }) => {
   
   return (
     <div className='ClassGrid'>

@@ -1,13 +1,13 @@
 import React from 'react'
 
-const Item = (props) => {
+const Item = ({ menuItem }) => {
   return (
     <div>
-      <div className="itemName" onClick={props.onClick}>
-        <h3>{props.name}</h3>
-        <h5>{props.description}</h5>
-        <h5>{props.image}</h5>
-        <h5>{props.price}</h5>
+      <div className="itemName" >
+        <h3>{menuItem.name}</h3>
+        {/* <h5>{menuItem.description}</h5>
+        <h5>{menuItem.image}</h5> */}
+        <h5>{menuItem.price}</h5>
       </div>
     </div>
   )
