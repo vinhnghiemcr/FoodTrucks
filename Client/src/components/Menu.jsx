@@ -1,14 +1,13 @@
-import Item from 'item'
+// import Item from 'Item'
 
 const Menu = (props) => {
-  
 
   return (
     <div className='ClassGrid'>
       <h3>{props.name}</h3>
-      {props.items.map((item) => {
+      {/* {props.items.map((item) => {
       <Item name={item.name} description={item.description}/>
-      })}
+      })} */}
     </div>
     )
 }
