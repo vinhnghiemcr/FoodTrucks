@@ -37,7 +37,7 @@ A full stack web app that maps out all the foodtrucks available at a theme park,
 
 ## **_Screenshots_**
 
-<img src='https://github.com/vinhnghiemcr/FoodTrucks/blob/main/Walkthrough.gif?raw=true' width='100vw'/>
+<img src='https://github.com/vinhnghiemcr/FoodTrucks/blob/main/Walkthrough.gif?raw=true'/>
 
 ## **_Future Updates_**
 
