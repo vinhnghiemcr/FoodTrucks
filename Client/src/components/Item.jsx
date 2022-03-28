@@ -1,14 +1,9 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
 
-const Item = ({ BASE_URL, itemId, onClickAdd, onClickMinus }) => {
+import React from 'react'
 
-    const [item, setItem] = useState({})
+const Item = ({ item, onClickAdd, onClickMinus }) => {
 
-    useEffect( async ()=>{
-      const response = await axios.get(`${BASE_URL}/item/${itemId}`)
-      setItem(response)
-    }, [])
+  
     
   return (
     <div className='Item'>

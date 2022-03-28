@@ -6,7 +6,11 @@ const MapTruck = ({trucks}) => {
 
   return (
     <div className="truckContainer foodBalloon" >
-        <TruckLocation trucks={trucks}/>
+        {trucks.map((truck, index) => 
+        <TruckLocation truck={truck} index={index}/>
+        )}
+        {/* <TruckLocation truck={trucks}/> */}
+
     </div>
   )
 }

@@ -8,31 +8,26 @@ import { useParams } from 'react-router'
 
 const TruckPage = () => {
   const BASE_URL = 'http://localhost:3001/api'
-  const [menuItems, setMenuItems] = useState([])
   const [receipt, setReceipt] = useState({})
   const [isSelected, setIsSelected] = useState(false)
   const [cart, setCart] = useState([])
   const [truck, setTruck] = useState({})
-
+  const [menuItems, setMenuItems] = useState([])
+  
   let { ftid } = useParams()
 
   useEffect(() => {
     if (!isSelected) {
       const getTruck = async () => {
-        const response = await axios.get(
-          `${BASE_URL}/food-trucks/${ftid}`
-        )
+        const response = await axios.get(`${BASE_URL}/food-trucks/${ftid}`)
+        const result = await axios.get(`${BASE_URL}/menu/${response.data.menu}/items`)
+        
         setTruck(response.data)
+        setMenuItems(result.data)
+        
       }
       getTruck()
 
-      const getMenuItems = async () => {
-        const response = await axios.get(
-          `${BASE_URL}/items`
-        )
-        setMenuItems(response.data)
-      }
-      getMenuItems()
     } else if (isSelected) {
       const getReceipt = async () => {
         const response = await axios.get(`${BASE_URL}/receipts/:rID`)

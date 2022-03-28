@@ -3,9 +3,10 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import ReactStars from 'react-stars'
+import { useLocation } from 'react-router-dom'
 
 const Review = ({ truckId }) => {
-
+  const location = useLocation()
   let navigate = useNavigate()
 
   const [name, setName] = useState('')
@@ -41,7 +42,7 @@ const Review = ({ truckId }) => {
       });
     }
     saveReview()
-    navigate(`/`)
+    navigate(location.pathname)
   }
 
   return (

@@ -9,22 +9,44 @@ main {
   background-color: rgba(173, 255, 47, 0.4);
 }
 
-.foodTruckIcon {
+.foodTruckIcon0 {
   display: flex;
   flex-direction: column;
   height: 10vh;
   width: 10vh;
   position: fixed;
-  left: 55%;
+  left: 60%;
   top: 58%;
-  animation: truckMoving 5s linear 2s infinite alternate;
+  animation: truckMoving0 5s linear 2s infinite alternate;
 }
 
-/* .foodBalloon {
+.foodTruckIcon1 {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  width: 10vh;
+  position: fixed;
+  left: 50%;
+  top: 58%;
+  animation: truckMoving1 5s linear 2s infinite alternate;
+}
+
+.foodTruckIcon2 {
+  display: flex;
+  flex-direction: column;
+  height: 10vh;
+  width: 10vh;
+  position: fixed;
+  left: 40%;
+  top: 45%;
+  /* animation: truckMoving 5s linear 2s infinite alternate; */
+}
+
+.foodBalloon {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  background-image: url('../assets/Asset3.png');
+  background-image: url("../assets/Asset3.png");
   background-size: 45px 70px;
   background-repeat: no-repeat;
   height: 10vh;
@@ -33,9 +55,9 @@ main {
   animation: balloonMoving 5s linear 1s infinite alternate;
   left: 74%;
   top: 40%;
-} */
+}
 
-/* @keyframes balloonMoving {
+@keyframes balloonMoving {
   0% {
     top: 24%;
   }
@@ -57,9 +79,9 @@ main {
   30% {
     top: 36%;
   }
-} */
+}
 
-@keyframes truckMoving {
+@keyframes truckMoving0 {
   0% {
     left: 60%;
   }
@@ -91,6 +113,38 @@ main {
     left: 69%;
   }
 }
+@keyframes truckMoving1 {
+  0% {
+    left: 50%;
+  }
+  5% {
+    left: 51%;
+  }
+  10% {
+    left: 52%;
+  }
+  15% {
+    left: 53%;
+  }
+  20% {
+    left: 54%;
+  }
+  25% {
+    left: 55%;
+  }
+  30% {
+    left: 56%;
+  }
+  35% {
+    left: 57%;
+  }
+  40% {
+    left: 58%;
+  }
+  45% {
+    left: 59%;
+  }
+}
 
 .truckLocation {
   min-height: 100%;
@@ -99,7 +153,7 @@ main {
   margin: 100px 60px;
   top: 0;
   left: 0;
-  background-image: url('../assets/ThemePark.png');
+  background-image: url("../assets/ThemePark.png");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -151,7 +205,7 @@ main {
   justify-content: space-around;
   margin: 10px;
   width: 80%;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
 .inst {
@@ -165,7 +219,7 @@ main {
 
 .truckDetails {
   color: #f2a516;
-  font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
 .stars {
@@ -186,13 +240,13 @@ a:hover {
 
 h2,
 h1 {
-  font-family: 'Monoton', cursive;
+  font-family: "Monoton", cursive;
   padding: 0;
   margin: 0 10px;
 }
 
 nav {
-  font-family: 'Monoton', cursive;
+  font-family: "Monoton", cursive;
 }
 
 ul {

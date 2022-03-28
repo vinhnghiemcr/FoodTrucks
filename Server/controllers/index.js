@@ -64,6 +64,27 @@ const getItemById = async (req, res) => {
   }
 }
 
+
+const getItemsByMenuId = async (req, res) => {
+  try {
+    const menu = await Menu.findById(req.params.id)
+    let items = []
+    for await (const itemId of menu.items) {
+      items.push(await Item.findById(itemId))
+    }
+    
+    // const items = menu.items.map(async (itemId, i) => {
+    //   await Item.findById(itemId).then(() =>
+    //     console.log("itemmmmmmmmmmm ", i) 
+    //   )})
+    console.log(items, "ITEMSSSSSS");
+      
+    return res.status(201).json(items)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const createReview = async (req, res) => {
   try {
     const truckId = req.body.truck
@@ -81,10 +102,11 @@ const createReview = async (req, res) => {
 module.exports = {
   getFoodTrucks,
   getFoodTruckById,
+  getMenuById,
+  getItemsByMenuId,
   createReceipt,
   getReceipts,
   getReceiptById,
   getItemById,
   createReview,
-  getMenuById,
 }

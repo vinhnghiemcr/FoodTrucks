@@ -76,7 +76,7 @@ const main = async () => {
     location: 'Northwest of the park',
     image:
       'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2Fd31vot4Yoy9r8dwY%2Fgiphy.gif&f=1&nofb=1',
-    rating: 5,
+    rating: 0,
     openHours: '10am-6pm'
   })
   await foodTruck1.save()
@@ -154,7 +154,7 @@ const main = async () => {
     menu: menu2._id,
     location: 'North of the park',
     image: 'https://media0.giphy.com/media/feiLHLNf3X2zTHNJwS/giphy.gif',
-    rating: 5,
+    rating: 0,
     openHours: '10am-6pm'
   })
   await foodTruck2.save()
@@ -240,7 +240,7 @@ const main = async () => {
     location: 'East of the park',
     image:
       'https://media.baamboozle.com/uploads/images/112140/1621611872_52840_gif-url.gif',
-    rating: 5,
+    rating: 0,
     openHours: '10am-6pm'
   })
   await foodTruck3.save()

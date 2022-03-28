@@ -8,6 +8,8 @@ router.get('/food-trucks/:ftid', controllers.getFoodTruckById)
 
 router.get('/menu/:id', controllers.getMenuById)
 
+router.get('/menu/:id/items', controllers.getItemsByMenuId)
+
 router.post('/receipt/:ftid', controllers.createReceipt)
 
 router.get('/receipt/:ftid', controllers.getReceipts)

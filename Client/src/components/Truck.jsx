@@ -1,18 +1,29 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
+import React from 'react'
 import ReactStars from 'react-stars'
 import Item from "./Item"
 import Cart from './Cart'
 import Receipt from './Receipt'
-import axios from 'axios'
 
-const Truck = ({BASE_URL,truck, cart, setCart, isSelected, setIsSelected, receipt,  menuItems }) => {
-  const [menu, setMenu] = useState({})
-  useEffect (async () => {
-    const response = await axios.get(`${BASE_URL}/menu/${truck.menu}`)
-    console.log(response, 'ITEMMMMMMMMMMMMMMMMMMMMMMMMMMMM')
-    setMenu(response)
-  }, [] )
+
+const Truck = ({BASE_URL,truck, cart, setCart, isSelected, setIsSelected, receipt, menuItems }) => {
+  // const [menu, setMenu] = useState({})
+  // useEffect (async () => {
+  //   const response = await axios.get(`${BASE_URL}/menu/${truck.menu}`)
+  //   console.log(response, 'ITEMMMMMMMMMMMMMMMMMMMMMMMMMMMM')
+  //   setMenu(response)
+  // }, [] )
+  // const [menuItems, setMenuItems] = useState([])
+  // useEffect (async () => {
+  //   const getMenuItems = async () => {
+  //     console.log(truck.menu, "Menu id");
+      
+  //     const response = await axios.get(`${BASE_URL}/menu/${truck.menu}/items`)
+  //     console.log(response.data, "ITEMSSSSSSSSSSSSSSSSSSSSSSS");
+      
+  //     setMenuItems(response.data)
+  //   }
+  //   getMenuItems()
+  // }, [])
   
   const addToCart = (e, id) => {
         setCart((currentCart) =>{ return [...currentCart, id]})
@@ -42,15 +53,13 @@ const Truck = ({BASE_URL,truck, cart, setCart, isSelected, setIsSelected, receip
     <div className ="truckComponent">
       <div className="truckDetails">
         <h1>{truck.name}</h1>
-        <ReactStars  value={truck.rating} className="stars" size={24} edit={false} color2={'yellow'} />
-        
+        {(truck.rating) ?<ReactStars  value={truck.rating} className="stars" size={24} edit={false} color2={'yellow'} /> : null}
         <img src={truck.image} alt='foodtruck' />
       </div>
-      <div className='menu'>
-      
+      <div className='menu'>      
         <h2>Menu</h2>
-        {menu.items.map((itemId) => 
-        (<Item BASE_URL={BASE_URL} itemId={itemId} className='item' key={menu._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
+        {menuItems.map((item) => 
+        (<Item BASE_URL={BASE_URL} item={item} className='item' key={item._id} onClickAdd={addToCart} onClickMinus={removeFromCart}/>))}
           
       </div>
       <section className='cart'>
