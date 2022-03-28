@@ -25,6 +25,7 @@ const TruckPage = () => {
         setTruck(response.data)
       }
       getTruck()
+
       const getMenuItems = async () => {
         const response = await axios.get(
           `${BASE_URL}/items`
@@ -44,6 +45,7 @@ const TruckPage = () => {
   return (
     <div>
       <Truck 
+      BASE_URL={BASE_URL}
         truck={truck} setTruck={setTruck}
         cart={cart} setCart={setCart}
         isSelected={isSelected} setIsSelected={setIsSelected}
