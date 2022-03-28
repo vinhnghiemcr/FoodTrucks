@@ -20,9 +20,12 @@ const getFoodTruckById = async (req, res) => {
 
 const createReceipt = async (req, res) => {
   try {
+    const truckId = req.body.truck
+    const truck = await FoodTruck.findById(truckId)
     const receipt = await new Receipt(req.body)
+    await FoodTruck.findByIdAndUpdate(truckId, {receipts: [...truck.receipts, receipt._id] })
     await receipt.save()
-    return res.status(201).json({ receipt })
+    return res.status(201).json(receipt)
   } catch (error) {
     return res.status(500).json({ error: error.message })
   }
@@ -72,13 +75,6 @@ const getItemsByMenuId = async (req, res) => {
     for await (const itemId of menu.items) {
       items.push(await Item.findById(itemId))
     }
-    
-    // const items = menu.items.map(async (itemId, i) => {
-    //   await Item.findById(itemId).then(() =>
-    //     console.log("itemmmmmmmmmmm ", i) 
-    //   )})
-    console.log(items, "ITEMSSSSSS");
-      
     return res.status(201).json(items)
   } catch (error) {
     return res.status(500).send(error.message)

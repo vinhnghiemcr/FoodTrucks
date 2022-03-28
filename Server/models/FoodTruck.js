@@ -9,7 +9,7 @@ const FoodTruck = new Schema(
         rating: { type: Number, required: true},
         reviews: [ { type: Schema.Types.ObjectId, ref: 'Review', required: false} ],
         openHours: { type: String, required: true},
-        reciept: [{ type: Schema.Types.ObjectId, ref: 'Receipt', required: false }]
+        receipts: [{ type: Schema.Types.ObjectId, ref: 'Receipt', required: false }]
     },
     { timestamps: true }
 )

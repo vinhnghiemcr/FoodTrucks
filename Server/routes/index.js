@@ -10,7 +10,7 @@ router.get('/menu/:id', controllers.getMenuById)
 
 router.get('/menu/:id/items', controllers.getItemsByMenuId)
 
-router.post('/receipt/:ftid', controllers.createReceipt)
+router.post('/receipt', controllers.createReceipt)
 
 router.get('/receipt/:ftid', controllers.getReceipts)
 
